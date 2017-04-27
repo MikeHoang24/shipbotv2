@@ -1,0 +1,5 @@
+REST POSITION:
+Set Y axis to 270
+Set Z axis to 20
+Set all Hebis to -90, 0, -13
+Press ENTER to start mission...
