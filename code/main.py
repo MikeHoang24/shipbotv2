@@ -186,6 +186,8 @@ for mission in missions:
             print("Invalid device")
         print("Finished Engaging Device: " + s.c_d.name + " at station "
               + s.c_s + " with orientation " + cv_ori)
+        if (s.c_d.name == "Small" or s.c_d.name == "Big"):
+            print("From angle: " + str(cv_green) + " to " + mission[2] + ". Rotate by: " + str(rotate))
         print("REST POSITION:")
         s.set_y(rest_y)
         s.set_z(rest_z)
