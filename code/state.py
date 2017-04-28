@@ -5,6 +5,7 @@ Created on Tue Apr 25 21:16:14 2017
 @author: Michu
 """
 import devices
+import time
 from ard_control import Drive
 from ard_control import Stepper
 from hebi_control import Hebi
@@ -53,6 +54,7 @@ class state:
             self.hebi.send(self.hebi0, self.hebi1, val)
         print("Set hebi2 to " + str(val))
         self.hebi2 = val
+        time.sleep(1)
         
     def rotate_hebi0(self, val):
         self.set_hebi0(self.hebi0 + val)

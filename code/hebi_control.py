@@ -5,6 +5,8 @@ Created on Thu Apr 27 11:30:46 2017
 @author: Michu
 """
 
+import time
+
 class Hebi:
     def __init__(self, fname):
         self.fname = fname
@@ -16,6 +18,7 @@ class Hebi:
         f.write("e " + str(int(hebi1)) + "\n")
         f.write("h " + str(int(hebi2)))
         f.close()
+        time.sleep(1)
         
     def terminate(self):
         f = open(self.fname, 'w')

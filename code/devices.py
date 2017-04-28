@@ -100,7 +100,7 @@ class Shuttle(Device): #0 = open, 1 = closed
             self.hebi0o = -90
             self.hebi1o = 0
             self.hebi2o = 40
-            self.hebi0c = 0
+            self.hebi0c = -90
             self.hebi1c = 0
             self.hebi2c = 200
         

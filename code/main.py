@@ -17,18 +17,23 @@ import time
 drive_port = "/dev/ttyACM1"
 stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
-debug = False #set to True when debugging code
+debug = True #set to True when debugging code
 hand_input = True #set to True to turn computer vision off
 
+stationD_x = 254 #distance robot needs to move from station D to station E
+stationG_y = 229 #distance robot needs to move from station F to station G
+station_dist = 305 #distance robot needs to move from station to a neighboring one
+
 s = state.state(drive_port, stepper_port, hebi_fname, debug) #initialize robot state
-st_a = station.Station("A", 1156, 0, 1) #X-coord, Y-coord, Orientation (0/1 = Short/Long side)
-st_b = station.Station("B", 851, 0, 1)
-st_c = station.Station("C", 546, 0, 1)
-st_d = station.Station("D", 241, 0, 1)
+#X-coord, Y-coord, Orientation (0/1 = Short/Long side)
+st_a = station.Station("A", stationD_x + station_dist*3, 0, 1)
+st_b = station.Station("B", stationD_x + station_dist*2, 0, 1)
+st_c = station.Station("C", stationD_x + station_dist, 0, 1)
+st_d = station.Station("D", stationD_x, 0, 1)
 st_e = station.Station("E", 0, 0, 1)
 st_f = station.Station("F", 0, 0, 0)
-st_g = station.Station("G", 0, 245, 0)
-st_h = station.Station("H", 0, 550, 0)
+st_g = station.Station("G", 0, stationG_y, 0)
+st_h = station.Station("H", 0, stationG_y + station_dist, 0)
 
 #initialize axes (wait a second to give time for serial ports to open)
 time.sleep(2)
@@ -40,6 +45,13 @@ rest_z = 20
 rest_hebi0 = -90
 rest_hebi1 = 0
 rest_hebi2 = -13
+
+#Initial positions
+init_y = 180
+init_z = 10
+init_hebi0 = 0
+init_hebi1 = 0
+init_hebi2 = -13
 
 shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
 shuttle_pullback = -10 #distance pulled back after engaging shuttlecock valve
@@ -53,10 +65,10 @@ max_offset = 153 #maximum reachable offset of the arm in mm
 
 missions = parse.parse_mission("mission_file.txt")
 
-print("REST POSITION:") #setting robot to rest position
-s.set_y(rest_y)
-s.set_z(rest_z)
-s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
+print("INITIAL POSITION:") #setting robot to rest position
+s.set_y(init_y)
+s.set_z(init_z)
+s.set_hebiall(init_hebi0, init_hebi1, init_hebi2)
 
 raw_input("Press ENTER to start mission...")
 
@@ -68,9 +80,11 @@ for mission in missions:
         elif (s.c_s == "E"):
             s.move_a("0 0 1 0 0 0")
         elif (s.c_s == "F"):
-            s.move_r(245)
+            s.move_r(stationG_y)
+            s.move_f()
         else:
-            s.move_r(305)
+            s.move_r(station_dist)
+            s.move_f()
         s.set_station(chr((ord(s.c_s)+1)))
     else:
         if not hand_input:
@@ -170,6 +184,8 @@ for mission in missions:
                     
         else:
             print("Invalid device")
+        print("Finished Engaging Device: " + s.c_d.name + " at station "
+              + s.c_s + " with orientation " + cv_ori)
         print("REST POSITION:")
         s.set_y(rest_y)
         s.set_z(rest_z)
