@@ -14,10 +14,10 @@ import capture
 import hand
 import time
 
-drive_port = "COM6"
-stepper_port = "COM3"
+drive_port = "/dev/ttyACM1"
+stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
-debug = True #set to True when debugging code
+debug = False #set to True when debugging code
 hand_input = True #set to True to turn computer vision off
 
 s = state.state(drive_port, stepper_port, hebi_fname, debug) #initialize robot state

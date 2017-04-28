@@ -12,9 +12,9 @@ class Hebi:
     def send(self, hebi0, hebi1, hebi2):
         f = open(self.fname, 'w')
         f.write("@ 1\n")
-        f.write("s " + str(hebi0) + "\n")
-        f.write("e " + str(hebi1) + "\n")
-        f.write("h " + str(hebi2))
+        f.write("s " + str(int(hebi0)) + "\n")
+        f.write("e " + str(int(hebi1)) + "\n")
+        f.write("h " + str(int(hebi2)))
         f.close()
         
     def terminate(self):

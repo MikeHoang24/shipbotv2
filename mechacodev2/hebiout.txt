@@ -1,0 +1,80 @@
+Broadcasting on:
+  192.168.2.255
+  128.237.143.255
+  128.237.143.255
+Modules found on the network:
+    238045233854836:   d8:80:39:9a:b9:74   (192.168.2.4) Hand | TeamJ
+    238045233887184:   d8:80:39:9b:37:d0   (192.168.2.3) elbow | TeamJ
+    238045239271894:   d8:80:39:ed:61:d6   (192.168.2.5) Shoulder | TeamJ
+User-created module objects:
+User-created group objects:
+
+Looking up group by name.
+Found group with 3 modules.
+Initializd
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: 0  0  -43
+Command sent to arm: 0 0 -43
+Received command fom text: 0  0  60
+Command sent to arm: 0 0 60
+Received command fom text: 0  29  137
+Command sent to arm: 0 29 137
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: 0  5  161
+Command sent to arm: 0 5 161
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: 0  0  287
+Command sent to arm: 0 0 287
+Received command fom text: 0  -10  177
+Command sent to arm: 0 -10 177
+Received command fom text: 0  0  200
+Command sent to arm: 0 0 200
+Received command fom text: 0  -18  185
+Command sent to arm: 0 -18 185
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: 0  29  137
+Command sent to arm: 0 29 137
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: 0  0  -43
+Command sent to arm: 0 0 -43
+Received command fom text: -90  49  -32
+Command sent to arm: -90 49 -32
+Received command fom text: -90  49  187
+Command sent to arm: -90 49 187
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: -90  0  140
+Command sent to arm: -90 0 140
+t: 0  29  137
+Command sent to arm: 0 29 137
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: 0  0  287
+Command sent to arm: 0 0 287
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
+Received command fom text: 0  0  200
+Command sent to arm: 0 0 200
+Received command fom text: 0  0  310
+Command sent to arm: 0 0 310
+Received command fom text: 0  0  300
+Command sent to arm: 0 0 300
+Received command fom text: -90  0  40
+Command sent to arm: -90 0 40
+Received command fom text: -90  0  150
+Command sent to arm: -90 0 150
+Received command fom text: -90  0  -13
+Command sent to arm: -90 0 -13
