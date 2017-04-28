@@ -17,12 +17,12 @@ import time
 drive_port = "/dev/ttyACM1"
 stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
-debug = True #set to True when debugging code
+debug = False #set to True when debugging code
 hand_input = True #set to True to turn computer vision off
 
 stationD_x = 254 #distance robot needs to move from station D to station E
 stationG_y = 229 #distance robot needs to move from station F to station G
-station_dist = 305 #distance robot needs to move from station to a neighboring one
+station_dist = 303 #distance robot needs to move from station to a neighboring one
 
 s = state.state(drive_port, stepper_port, hebi_fname, debug) #initialize robot state
 #X-coord, Y-coord, Orientation (0/1 = Short/Long side)
@@ -47,18 +47,18 @@ rest_hebi1 = 0
 rest_hebi2 = -13
 
 #Initial positions
-init_y = 180
+init_y = 250
 init_z = 10
 init_hebi0 = 0
 init_hebi1 = 0
 init_hebi2 = -13
 
 shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
-shuttle_pullback = -10 #distance pulled back after engaging shuttlecock valve
+shuttle_pullback = -20 #distance pulled back after engaging shuttlecock valve
 breaker_dist = 62 #distance between middle switch in breaker and side switch in mm
 breaker_a_middle = 14
 breaker_b_middle = -breaker_a_middle
-breaker_pullback = 5 #distance pulled back after flipping breaker in mm
+breaker_pullback = 15 #distance pulled back after flipping breaker in mm
 big_cw_gap = 60 #gap from green marker on big valve to arm in cw direction
 big_ccw_gap = 30 #gap from green marker on big valve to arm in ccw direction
 max_offset = 153 #maximum reachable offset of the arm in mm
@@ -75,6 +75,9 @@ raw_input("Press ENTER to start mission...")
 s.move_f() #Moving forward until hitting the wall (just in case)
 for mission in missions:
     while (ord(mission[0]) > ord(s.c_s)):
+	s.set_y(rest_y)
+	s.set_z(rest_z)
+	s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
         if (s.c_s == "D"):
             s.move_a("245 0 1 0 0 1")
         elif (s.c_s == "E"):
@@ -85,6 +88,7 @@ for mission in missions:
         else:
             s.move_r(station_dist)
             s.move_f()
+	time.sleep(1)
         s.set_station(chr((ord(s.c_s)+1)))
     else:
         if not hand_input:
@@ -94,9 +98,9 @@ for mission in missions:
             cv_green = hand.get_angle(ord(s.c_s)-ord("A"))
             cv_ori = hand.get_ori(ord(s.c_s)-ord("A"))
         if (s.c_s == "E"):
-            cv_off = 51
+            cv_off = 70
         elif (s.c_s == "F"):
-            cv_off = -76
+            cv_off = -86
         (up, theta1, theta2) = offset.offsets(cv_off)
         if (mission[1] == "V1"): #SMALL VALVE
             target_angle = int(mission[2])
@@ -109,7 +113,7 @@ for mission in missions:
                 s.set_hebi2(s.hebi2 + rotate)
             elif cv_ori == "H":
                 s.set_z(s.c_d.z0)
-                s.set_y(s.c_d.y0 + up)
+                s.set_y(s.c_d.y0 - up)
                 s.set_z(s.c_d.z1)
                 s.set_hebi2(s.hebi2 + rotate)
                 s.set_z(s.c_d.z0)  
@@ -169,14 +173,14 @@ for mission in missions:
                 s.set_z(s.c_d.z0)
                 if (target == 0):
                     s.set_hebiall(s.c_d.hebi0c, s.c_d.hebi1c + theta1, s.c_d.hebi2c + theta2)
-                    s.set_y(s.c_d.y0+up)
+                    s.set_y(s.c_d.y0-up)
                     s.set_z(s.c_d.z1)
-                    s.rotate_hebi2(shuttle_rotate)
-                    s.rotate_hebi2(shuttle_pullback)
+                    s.rotate_hebi2(-shuttle_rotate)
+                    s.rotate_hebi2(-shuttle_pullback)
                     s.set_z(s.c_d.z0)
                 elif (target == 1):
                     s.set_hebiall(s.c_d.hebi0o, s.c_d.hebi1o + theta1, s.c_d.hebi2o + theta2)
-                    s.set_y(s.c_d.y0+up)
+                    s.set_y(s.c_d.y0-up)
                     s.set_z(s.c_d.z1)
                     s.rotate_hebi2(shuttle_rotate)
                     s.rotate_hebi2(shuttle_pullback)
@@ -194,6 +198,6 @@ for mission in missions:
         s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
         
 if not debug:
-    s.hebi_terminate()
+    #s.hebi_terminate()
     s.drive_terminate()
     s.stepper_terminate()
