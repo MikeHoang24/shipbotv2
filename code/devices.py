@@ -121,8 +121,8 @@ class Breaker(Device):
         elif (letter == "B"):
             self.z0 = 25
             self.z1 = 59
-            self.y0 = 152
-            self.y1 = 152
+            self.y0 = 154
+            self.y1 = 154
             self.hebi0 = 0
             self.hebi1 = 0
             self.hebi2 = hebi2_zero + 180

@@ -158,7 +158,11 @@ for mission in missions:
                 (up, theta1, theta2) = offset.offset_breakers(cv_off+breaker_middle, max_L, max_L2)
             s.set_z(s.c_d.z0+up)
             s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1+theta1, s.c_d.hebi2+theta2)
-            s.set_y(s.c_d.y0)
+            #if (target == "B1" or target == "B3"):
+            #    y_calibrate = s.c_d.y0 + 2
+            #else:
+            #    y_calibrate = s.c_d.y0
+            s.set_y(y_calibrate)
             s.set_z(s.c_d.z1+up)
             if (s.c_d.z1 > s.c_d.z0):
                 s.offset_z(-breaker_pullback)
