@@ -18,7 +18,7 @@ drive_port = "/dev/ttyACM1"
 stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
 debug = False #set to True when debugging code
-hand_input = True #set to True to turn computer vision off
+hand_input = False #set to True to turn computer vision off
 
 stationD_x = 254 #distance robot needs to move from station D to station E
 stationG_y = 229 #distance robot needs to move from station F to station G
@@ -214,6 +214,7 @@ for mission in missions:
         s.set_z(rest_z)
         s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
         
+time.sleep(1)
 if not debug:
     s.hebi_terminate()
     s.drive_terminate()

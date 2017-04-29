@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Apr 26 20:04:18 2017
-
-@author: Michu
-"""
-
 from DeviceRecognition import *
 import picamera
 
@@ -14,9 +7,7 @@ MOCK_IMG_PATH = "cvimages/image26.jpg"
 #MOCK_IMG_PATH = "imgs/shuttlecock_lowres.jpg"
 capture_path = "imgs/capture.jpg"
 
-camera.picamera.PiCamera()
-
-def cv_info(device_code = "none"):
+def processCommand(device_code = "none"):
 	if device_code == "none":
 		device_code = raw_input("Device Type: ")
 		# Case on extracted device code!
@@ -33,7 +24,7 @@ def cv_info(device_code = "none"):
 		# device is breaker box
 		device = BreakerBox()
 	else:
-		return (0, 0, "V")
+		return (0, 0, 0)
   
 	if USE_CAMERA:
 		camera.capture(self.capture_path,format = 'jpeg')
@@ -54,3 +45,15 @@ def cv_info(device_code = "none"):
   		print(angle)
 		#self.writeData(offset,orient,angle)
 		return (offset, angle, orient)
+
+print ("CV control running.")
+
+#intialization, only set up this once once
+camera.picamera.PiCamera()
+#for example
+device_code = "V2"
+
+while 1:
+	(offset, angle, orient) = processCommand(device_code)
+ 
+print ("CV control stopped.")
