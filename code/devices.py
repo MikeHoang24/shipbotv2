@@ -5,7 +5,7 @@ Created on Tue Apr 25 19:08:43 2017
 @author: Michu
 """
 
-hebi2_zero = 0
+hebi2_zero = 43
 
 class Device:
     def __init__(self, name):
@@ -90,7 +90,7 @@ class Shuttle(Device): #0 = open, 1 = closed
             self.z1 = 7
             self.hebi0o = 0
             self.hebi1o = 0
-            self.hebi2o = hebi2_zero - 27
+            self.hebi2o = hebi2_zero - 37
             self.hebi0c = 0
             self.hebi1c = 0
             self.hebi2c = hebi2_zero + 133
@@ -114,8 +114,8 @@ class Breaker(Device):
             self.hebi0 = 0
             self.hebi1 = 0
             self.hebi2 = hebi2_zero + 180
-            self.y0 = 147
-            self.y1 = 147
+            self.y0 = 150
+            self.y1 = 150
             self.z0 = 70
             self.z1 = 42
         elif (letter == "B"):

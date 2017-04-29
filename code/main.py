@@ -56,12 +56,13 @@ init_hebi0 = 0
 init_hebi1 = 0
 init_hebi2 = 0
 
+big_pullback = 10
 shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
-shuttle_pullback = -20 #distance pulled back after engaging shuttlecock valve
+shuttle_pullback = -25 #angle pulled back after engaging shuttlecock valve
 breaker_dist = 62 #distance between middle switch in breaker and side switch in mm
-breaker_a_middle = 14
-breaker_b_middle = -breaker_a_middle
-breaker_pullback = 15 #distance pulled back after flipping breaker in mm
+breaker_a_middle = 12
+breaker_b_middle = -14
+breaker_pullback = 20 #distance pulled back after flipping breaker in mm
 big_cw_gap = 60 #gap from green marker on big valve to arm in cw direction
 big_ccw_gap = 30 #gap from green marker on big valve to arm in ccw direction
 max_offset = 153 #maximum reachable offset of the arm in mm
@@ -136,8 +137,10 @@ for mission in missions:
             s.set_y(s.c_d.y1)
             if rotate > 0:
                 s.rotate_hebi2(rotate + big_cw_gap)
+                s.rotate_hebi2(-big_pullback)
             else:
                 s.rotate_hebi2(rotate - big_ccw_gap)
+                s.rotate_hebi2(big_pullback)
         elif (mission[1] == "A" or mission[1] == "B"): #BREAKERS
             target = mission[2]
             s.c_d = devices.Breaker(mission[1])
