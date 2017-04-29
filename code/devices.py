@@ -52,13 +52,13 @@ class Small(Device):
         Device.__init__(self, "Small")
         self.ori = ori
         if (ori == "V"):
-            self.y0 = 145
-            self.y1 = 145
+            self.y0 = 150
+            self.y1 = 150
             self.z0 = 10
             self.z1 = 10
             self.hebi0 = 0
             self.hebi1 = 0
-            self.hebi2 = hebi2_zero
+            self.hebi2 = hebi2_zero+180
         elif (ori == "H"):
             self.y0 = 164
             self.y1 = 164
@@ -66,7 +66,7 @@ class Small(Device):
             self.z1 = 300
             self.hebi0 = -90
             self.hebi1 = 0
-            self.hebi2 = hebi2_zero
+            self.hebi2 = hebi2_zero+180
     
 class Big(Device):
     def __init__(self):
@@ -84,8 +84,8 @@ class Shuttle(Device): #0 = open, 1 = closed
         Device.__init__(self, "Shuttle")
         self.ori = ori
         if ori == "V":
-            self.y0 = 140
-            self.y1 = 140
+            self.y0 = 143
+            self.y1 = 143
             self.z0 = 7
             self.z1 = 7
             self.hebi0o = 0
@@ -95,8 +95,8 @@ class Shuttle(Device): #0 = open, 1 = closed
             self.hebi1c = 0
             self.hebi2c = hebi2_zero + 133
         elif ori == "H":
-            self.y0 = 80
-            self.y1 = 80
+            self.y0 = 81
+            self.y1 = 81
             self.z0 = 360
             self.z1 = 325
             self.hebi0o = -90
@@ -121,8 +121,8 @@ class Breaker(Device):
         elif (letter == "B"):
             self.z0 = 25
             self.z1 = 59
-            self.y0 = 153
-            self.y1 = 153
+            self.y0 = 152
+            self.y1 = 152
             self.hebi0 = 0
             self.hebi1 = 0
             self.hebi2 = hebi2_zero + 180
