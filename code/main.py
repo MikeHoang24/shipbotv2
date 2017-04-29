@@ -47,14 +47,14 @@ rest_y = 270
 rest_z = 20
 rest_hebi0 = -90
 rest_hebi1 = 0
-rest_hebi2 = -13
+rest_hebi2 = 0
 
 #Initial positions
 init_y = 250
 init_z = 10
 init_hebi0 = 0
 init_hebi1 = 0
-init_hebi2 = -13
+init_hebi2 = 0
 
 shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
 shuttle_pullback = -20 #distance pulled back after engaging shuttlecock valve
