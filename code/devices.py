@@ -5,12 +5,14 @@ Created on Tue Apr 25 19:08:43 2017
 @author: Michu
 """
 
+hebi2_zero = 0
+
 class Device:
     def __init__(self, name):
         self.name = name
         self.hebi0 = -90
         self.hebi1 = 0
-        self.hebi2 = -13
+        self.hebi2 = hebi2_zero
         self.y0 = 170
         self.z0 = 10
         self.y1 = 170
@@ -56,7 +58,7 @@ class Small(Device):
             self.z1 = 10
             self.hebi0 = 0
             self.hebi1 = 0
-            self.hebi2 = -13
+            self.hebi2 = hebi2_zero
         elif (ori == "H"):
             self.y0 = 164
             self.y1 = 164
@@ -64,7 +66,7 @@ class Small(Device):
             self.z1 = 300
             self.hebi0 = -90
             self.hebi1 = 0
-            self.hebi2 = -13
+            self.hebi2 = hebi2_zero
     
 class Big(Device):
     def __init__(self):
@@ -75,7 +77,7 @@ class Big(Device):
         self.z1 = 7
         self.hebi0 = 0
         self.hebi1 = 0
-        self.hebi2 = -13
+        self.hebi2 = hebi2_zero
         
 class Shuttle(Device): #0 = open, 1 = closed
     def __init__(self, ori):
@@ -88,10 +90,10 @@ class Shuttle(Device): #0 = open, 1 = closed
             self.z1 = 7
             self.hebi0o = 0
             self.hebi1o = 0
-            self.hebi2o = -40
+            self.hebi2o = hebi2_zero - 27
             self.hebi0c = 0
             self.hebi1c = 0
-            self.hebi2c = 120
+            self.hebi2c = hebi2_zero + 133
         elif ori == "H":
             self.y0 = 80
             self.y1 = 80
@@ -99,10 +101,10 @@ class Shuttle(Device): #0 = open, 1 = closed
             self.z1 = 325
             self.hebi0o = -90
             self.hebi1o = 0
-            self.hebi2o = 40
+            self.hebi2o = hebi2_zero + 53
             self.hebi0c = -90
             self.hebi1c = 0
-            self.hebi2c = 200
+            self.hebi2c = hebi2_zero + 213
         
 class Breaker(Device):
     def __init__(self, letter):
@@ -111,7 +113,7 @@ class Breaker(Device):
         if (letter == "A"):
             self.hebi0 = 0
             self.hebi1 = 0
-            self.hebi2 = 167
+            self.hebi2 = hebi2_zero + 180
             self.y0 = 147
             self.y1 = 147
             self.z0 = 70
@@ -123,4 +125,4 @@ class Breaker(Device):
             self.y1 = 153
             self.hebi0 = 0
             self.hebi1 = 0
-            self.hebi2 = 167
+            self.hebi2 = hebi2_zero + 180
