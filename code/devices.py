@@ -84,8 +84,8 @@ class Shuttle(Device): #0 = open, 1 = closed
         Device.__init__(self, "Shuttle")
         self.ori = ori
         if ori == "V":
-            self.y0 = 143
-            self.y1 = 143
+            self.y0 = 150
+            self.y1 = 150
             self.z0 = 7
             self.z1 = 7
             self.hebi0o = 0
