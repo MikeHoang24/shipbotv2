@@ -23,8 +23,11 @@ hand_input = True #set to True to turn computer vision off
 stationD_x = 254 #distance robot needs to move from station D to station E
 stationG_y = 229 #distance robot needs to move from station F to station G
 station_dist = 303 #distance robot needs to move from station to a neighboring one
+max_L = 153
+max_L2 = max_L + 35
+init_station = "F"
 
-s = state.state(drive_port, stepper_port, hebi_fname, debug) #initialize robot state
+s = state.state(drive_port, stepper_port, hebi_fname, init_station, debug) #initialize robot state
 #X-coord, Y-coord, Orientation (0/1 = Short/Long side)
 st_a = station.Station("A", stationD_x + station_dist*3, 0, 1)
 st_b = station.Station("B", stationD_x + station_dist*2, 0, 1)
@@ -101,7 +104,14 @@ for mission in missions:
             cv_off = 70
         elif (s.c_s == "F"):
             cv_off = -86
-        (up, theta1, theta2) = offset.offsets(cv_off)
+        else:
+            if cv_off < -max_L:
+                s.move_l(cv_off)
+                (cv_off, cv_green, cv_ori) = capture.cv_info(mission[1])
+            elif cv_off > max_L:
+                s.move_r(cv_off)
+                (cv_off, cv_green, cv_ori) = capture.cv_info(mission[1])
+        (up, theta1, theta2) = offset.offset_valves(cv_off, max_L)
         if (mission[1] == "V1"): #SMALL VALVE
             target_angle = int(mission[2])
             rotate = target_angle - cv_green
@@ -137,12 +147,12 @@ for mission in missions:
                 assert(mission[1] == "B")
                 breaker_middle = breaker_b_middle
             if (target == "B1"):
-                (up, theta1, theta2) = offset.offsets(cv_off-breaker_dist+breaker_middle)
+                (up, theta1, theta2) = offset.offset_breakers(cv_off-breaker_dist+breaker_middle, max_L, max_L2)
             elif (target == "B3"):
-                (up, theta1, theta2) = offset.offsets(cv_off+breaker_dist+breaker_middle)
+                (up, theta1, theta2) = offset.offset_breakers(cv_off+breaker_dist+breaker_middle, max_L, max_L2)
             else:
                 assert(target == "B2")
-                (up, theta1, theta2) = offset.offsets(cv_off+breaker_middle)
+                (up, theta1, theta2) = offset.offset_breakers(cv_off+breaker_middle, max_L, max_L2)
             s.set_z(s.c_d.z0+up)
             s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1+theta1, s.c_d.hebi2+theta2)
             s.set_y(s.c_d.y0)
@@ -198,6 +208,6 @@ for mission in missions:
         s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
         
 if not debug:
-    #s.hebi_terminate()
+    s.hebi_terminate()
     s.drive_terminate()
     s.stepper_terminate()

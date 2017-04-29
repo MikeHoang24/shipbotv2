@@ -11,8 +11,8 @@ from ard_control import Stepper
 from hebi_control import Hebi
 
 class state:
-    def __init__(self, drive_port, stepper_port, hebifname, debug):
-        self.c_s = "A"
+    def __init__(self, drive_port, stepper_port, hebifname, init_station, debug):
+        self.c_s = init_station
         self.c_d = devices.Dummy()
         self.y = 270
         self.z = 10

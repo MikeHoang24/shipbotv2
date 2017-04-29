@@ -18,7 +18,6 @@ class Hebi:
         f.write("e " + str(int(hebi1)) + "\n")
         f.write("h " + str(int(hebi2)))
         f.close()
-        time.sleep(1)
         
     def terminate(self):
         f = open(self.fname, 'w')
