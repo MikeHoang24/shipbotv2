@@ -17,7 +17,7 @@ import time
 drive_port = "/dev/ttyACM1"
 stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
-debug = False #set to True when debugging code
+debug = True #set to True when debugging code
 hand_input = True #set to True to turn computer vision off
 
 stationD_x = 254 #distance robot needs to move from station D to station E
