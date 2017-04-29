@@ -162,7 +162,7 @@ for mission in missions:
             #    y_calibrate = s.c_d.y0 + 2
             #else:
             #    y_calibrate = s.c_d.y0
-            s.set_y(y_calibrate)
+            s.set_y(s.c_d.y0)
             s.set_z(s.c_d.z1+up)
             if (s.c_d.z1 > s.c_d.z0):
                 s.offset_z(-breaker_pullback)
