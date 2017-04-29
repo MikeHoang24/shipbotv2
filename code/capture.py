@@ -14,9 +14,7 @@ MOCK_IMG_PATH = "cvimages/image26.jpg"
 #MOCK_IMG_PATH = "imgs/shuttlecock_lowres.jpg"
 capture_path = "imgs/capture.jpg"
 
-camera.picamera.PiCamera()
-
-def cv_info(device_code = "none"):
+def cv_info(camera, device_code = "none"):
 	if device_code == "none":
 		device_code = raw_input("Device Type: ")
 		# Case on extracted device code!
@@ -36,8 +34,8 @@ def cv_info(device_code = "none"):
 		return (0, 0, "V")
   
 	if USE_CAMERA:
-		camera.capture(self.capture_path,format = 'jpeg')
-		path = self.capture_path
+		camera.capture(capture_path,format = 'jpeg')
+		path = capture_path
 	else:
 		path = MOCK_IMG_PATH
 

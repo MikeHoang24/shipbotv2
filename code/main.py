@@ -13,6 +13,7 @@ import offset
 import capture
 import hand
 import time
+import picamera
 
 drive_port = "/dev/ttyACM1"
 stepper_port = "/dev/ttyACM0"
@@ -76,6 +77,8 @@ s.set_hebiall(init_hebi0, init_hebi1, init_hebi2)
 
 raw_input("Press ENTER to start mission...")
 
+camera = picamera.PiCamera()
+
 s.move_f() #Moving forward until hitting the wall (just in case)
 for mission in missions:
     while (ord(mission[0]) > ord(s.c_s)):
@@ -96,7 +99,7 @@ for mission in missions:
         s.set_station(chr((ord(s.c_s)+1)))
     else:
         if not hand_input:
-            (cv_off, cv_green, cv_ori) = capture.cv_info(mission[1]) #Computer Vision
+            (cv_off, cv_green, cv_ori) = capture.cv_info(camera, mission[1]) #Computer Vision
         else:
             cv_off = 0
             cv_green = hand.get_angle(ord(s.c_s)-ord("A"))
