@@ -60,11 +60,11 @@ big_pullback = 10
 shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
 shuttle_pullback = -25 #angle pulled back after engaging shuttlecock valve
 breaker_dist = 62 #distance between middle switch in breaker and side switch in mm
-breaker_a_middle = 12
+breaker_a_middle = 13
 breaker_b_middle = -14
 breaker_pullback = 20 #distance pulled back after flipping breaker in mm
-big_cw_gap = 60 #gap from green marker on big valve to arm in cw direction
-big_ccw_gap = 30 #gap from green marker on big valve to arm in ccw direction
+big_cw_gap = 42 #gap from green marker on big valve to arm in cw direction
+big_ccw_gap = 20 #gap from green marker on big valve to arm in ccw direction
 max_offset = 153 #maximum reachable offset of the arm in mm
 
 missions = parse.parse_mission("mission_file.txt")
