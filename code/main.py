@@ -163,9 +163,9 @@ for mission in missions:
                 assert(target == "B2")
                 (up, theta1, theta2) = offset.offset_breakers(cv_off+breaker_middle, max_L, max_L2)
             y_in = s.c_d.y0
-	    if cv_off > 100:
-		y_in -= 5
-	    s.set_z(s.c_d.z0+up)
+            if cv_off > 59:
+                y_in -= cv_off/20
+            s.set_z(s.c_d.z0+up)
             s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1+theta1, s.c_d.hebi2+theta2)
             #if (target == "B1" or target == "B3"):
             #    y_calibrate = s.c_d.y0 + 2
