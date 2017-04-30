@@ -30,7 +30,7 @@ def offset_breakers(x_off, L, L2):
     elif abs(x_off) <= L2:
         theta1 = math.asin(float(x_off)/L2)
         print(theta1)
-        up = L-L2*math.cos(theta1)-(L2-L) #this might look wrong but it's correct, don't change
+        up = L-L2*math.cos(theta1)-(L2-L-20)
         print(up)
         return (up, theta1/math.pi*180.0, -180)
     else:

@@ -28,7 +28,7 @@ stationG_y = 229 #distance robot needs to move from station F to station G
 station_dist = 303 #distance robot needs to move from station to a neighboring one
 max_L = 153
 max_L2 = max_L + 35
-init_station = "E"
+init_station = "A"
 
 s = state.state(drive_port, stepper_port, hebi_fname, init_station, debug) #initialize robot state
 #X-coord, Y-coord, Orientation (0/1 = Short/Long side)
