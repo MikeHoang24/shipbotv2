@@ -1,7 +1,7 @@
 Broadcasting on:
   192.168.2.255
-  128.237.223.255
-  128.237.223.255
+  128.237.143.255
+  128.237.143.255
 Modules found on the network:
     238045233854836:   d8:80:39:9a:b9:74   (192.168.2.4) Hand | TeamJ
     238045233887184:   d8:80:39:9b:37:d0   (192.168.2.3) elbow | TeamJ
@@ -16,16 +16,32 @@ Received command fom text: 0  0  0
 Command sent to arm: 0 0 0
 Received command fom text: 0  0  0
 Command sent to arm: 0 0 0
-Received command fom text: 0  34  188
-Command sent to arm: 0 34 188
 Received command fom text: -90  0  0
 Command sent to arm: -90 0 0
-Received command fom text: 0  76  146
-Command sent to arm: 0 76 146
+Received command fom text: 0  7  215
+Command sent to arm: 0 7 215
 Received command fom text: -90  0  0
 Command sent to arm: -90 0 0
-Received command fom text: 0  9  213
-Command sent to arm: 0 9 213
+Received command fom text: 0  71  151
+Command sent to arm: 0 71 151
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+Received command fom text: 0  32  190
+Command sent to arm: 0 32 190
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+Received command fom text: 0  -40  263
+Command sent to arm: 0 -40 263
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+Received command fom text: 0  -59  43
+Command sent to arm: 0 -59 43
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+Received command fom text: 0  -14  237
+Command sent to arm: 0 -14 237
 Received command fom text: -90  0  0
 Command sent to arm: -90 0 0
 arm terminated

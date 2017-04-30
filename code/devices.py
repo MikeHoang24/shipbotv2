@@ -71,8 +71,8 @@ class Small(Device):
 class Big(Device):
     def __init__(self):
         Device.__init__(self, "Big")
-        self.y0 = 169
-        self.y1 = 169
+        self.y0 = 155
+        self.y1 = 155
         self.z0 = 7
         self.z1 = 7
         self.hebi0 = 0
@@ -114,10 +114,10 @@ class Breaker(Device):
             self.hebi0 = 0
             self.hebi1 = 0
             self.hebi2 = hebi2_zero + 180
-            self.y0 = 145
-            self.y1 = 145
+            self.y0 = 144
+            self.y1 = 144
             self.z0 = 70
-            self.z1 = 42
+            self.z1 = 40
         elif (letter == "B"):
             self.z0 = 25
             self.z1 = 59

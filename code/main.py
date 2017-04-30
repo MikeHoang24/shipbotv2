@@ -28,7 +28,7 @@ stationG_y = 229 #distance robot needs to move from station F to station G
 station_dist = 303 #distance robot needs to move from station to a neighboring one
 max_L = 153
 max_L2 = max_L + 35
-init_station = "A"
+init_station = "D"
 
 s = state.state(drive_port, stepper_port, hebi_fname, init_station, debug) #initialize robot state
 #X-coord, Y-coord, Orientation (0/1 = Short/Long side)
@@ -108,7 +108,7 @@ for mission in missions:
             cv_green = hand.get_angle(ord(s.c_s)-ord("A"))
             cv_ori = hand.get_ori(ord(s.c_s)-ord("A"))
         if (s.c_s == "E"):
-            cv_off = 74
+            cv_off = 70
         elif (s.c_s == "F"):
             cv_off = -86
         else:
@@ -162,13 +162,16 @@ for mission in missions:
             else:
                 assert(target == "B2")
                 (up, theta1, theta2) = offset.offset_breakers(cv_off+breaker_middle, max_L, max_L2)
-            s.set_z(s.c_d.z0+up)
+            y_in = s.c_d.y0
+	    if cv_off > 100:
+		y_in -= 5
+	    s.set_z(s.c_d.z0+up)
             s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1+theta1, s.c_d.hebi2+theta2)
             #if (target == "B1" or target == "B3"):
             #    y_calibrate = s.c_d.y0 + 2
             #else:
             #    y_calibrate = s.c_d.y0
-            s.set_y(s.c_d.y0)
+            s.set_y(y_in)
             s.set_z(s.c_d.z1+up)
             if (s.c_d.z1 > s.c_d.z0):
                 s.offset_z(-breaker_pullback)
