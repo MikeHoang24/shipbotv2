@@ -13,7 +13,6 @@ import offset
 import capture
 import hand
 import time
-import picamera
 
 drive_port = "/dev/ttyACM1"
 stepper_port = "/dev/ttyACM0"
@@ -21,12 +20,15 @@ hebi_fname = "hebi_info.txt"
 debug = False #set to True when debugging code
 hand_input = True #set to True to turn computer vision off
 
+if not hand_input:
+    import picamera
+
 stationD_x = 254 #distance robot needs to move from station D to station E
 stationG_y = 229 #distance robot needs to move from station F to station G
 station_dist = 303 #distance robot needs to move from station to a neighboring one
 max_L = 153
 max_L2 = max_L + 35
-init_station = "A"
+init_station = "E"
 
 s = state.state(drive_port, stepper_port, hebi_fname, init_station, debug) #initialize robot state
 #X-coord, Y-coord, Orientation (0/1 = Short/Long side)
@@ -77,7 +79,8 @@ s.set_hebiall(init_hebi0, init_hebi1, init_hebi2)
 
 raw_input("Press ENTER to start mission...")
 
-camera = picamera.PiCamera()
+if not hand_input:
+    camera = picamera.PiCamera()
 
 s.move_f() #Moving forward until hitting the wall (just in case)
 for mission in missions:
@@ -105,7 +108,7 @@ for mission in missions:
             cv_green = hand.get_angle(ord(s.c_s)-ord("A"))
             cv_ori = hand.get_ori(ord(s.c_s)-ord("A"))
         if (s.c_s == "E"):
-            cv_off = 70
+            cv_off = 74
         elif (s.c_s == "F"):
             cv_off = -86
         else:

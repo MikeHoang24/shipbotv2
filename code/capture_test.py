@@ -14,6 +14,7 @@ device = "V2"
 
 (cv_off, cv_green, cv_ori) = capture.cv_info(camera, device)
 
+print ("Printing results: offset, angle, orientation")
 print cv_off
 print cv_green
 print cv_ori

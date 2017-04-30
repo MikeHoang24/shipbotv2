@@ -5,7 +5,7 @@ Created on Tue Apr 25 19:08:43 2017
 @author: Michu
 """
 
-hebi2_zero = -44
+hebi2_zero = 43
 
 class Device:
     def __init__(self, name):
@@ -71,8 +71,8 @@ class Small(Device):
 class Big(Device):
     def __init__(self):
         Device.__init__(self, "Big")
-        self.y0 = 149
-        self.y1 = 149
+        self.y0 = 169
+        self.y1 = 169
         self.z0 = 7
         self.z1 = 7
         self.hebi0 = 0
