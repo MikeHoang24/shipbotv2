@@ -1,2 +1,5 @@
-Breaker not centered
-Breaker in the corner (not long enough, then what)
+Breaker B, B1, Station F needs fix
+Recalibrate Corners + breakers. Method: move around corner stations. Currently set for EA, FBs
+CV not working
+importing picamera slows shit down a lot
+do not run raspberry pi for 2+ hours at a time, gets hot af
