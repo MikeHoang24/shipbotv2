@@ -12,36 +12,21 @@ User-created group objects:
 Looking up group by name.
 Found group with 3 modules.
 Initializd
-Received command fom text: 0  0  0
+Received command fom text: 0  -34  -9
+Command sent to arm: 0 -34 -9
+Received command fom text: 0  -34  170
+Command sent to arm: 0 -34 170
+Received command fom text: 0  -34  170
+Command sent to arm: 0 -34 170
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+arm terminated
+0
 Command sent to arm: 0 0 0
-Received command fom text: 0  0  0
-Command sent to arm: 0 0 0
-Received command fom text: -90  0  0
-Command sent to arm: -90 0 0
-Received command fom text: 0  7  215
-Command sent to arm: 0 7 215
-Received command fom text: -90  0  0
-Command sent to arm: -90 0 0
-Received command fom text: 0  71  151
-Command sent to arm: 0 71 151
-Received command fom text: -90  0  0
-Command sent to arm: -90 0 0
-Received command fom text: 0  32  190
-Command sent to arm: 0 32 190
-Received command fom text: -90  0  0
-Command sent to arm: -90 0 0
-Received command fom text: -90  0  0
-Command sent to arm: -90 0 0
-Received command fom text: 0  -40  263
-Command sent to arm: 0 -40 263
-Received command fom text: -90  0  0
-Command sent to arm: -90 0 0
-Received command fom text: 0  -59  43
-Command sent to arm: 0 -59 43
-Received command fom text: -90  0  0
-Command sent to arm: -90 0 0
-Received command fom text: 0  -14  237
-Command sent to arm: 0 -14 237
+Received command fom text: 0  -34  170
+Command sent to arm: 0 -34 170
+Received command fom text: 0  -34  170
+Command sent to arm: 0 -34 170
 Received command fom text: -90  0  0
 Command sent to arm: -90 0 0
 arm terminated

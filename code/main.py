@@ -28,7 +28,7 @@ stationG_y = 229 #distance robot needs to move from station F to station G
 station_dist = 303 #distance robot needs to move from station to a neighboring one
 max_L = 153
 max_L2 = max_L + 35
-init_station = "D"
+init_station = "F"
 
 s = state.state(drive_port, stepper_port, hebi_fname, init_station, debug) #initialize robot state
 #X-coord, Y-coord, Orientation (0/1 = Short/Long side)
@@ -59,15 +59,15 @@ init_hebi0 = 0
 init_hebi1 = 0
 init_hebi2 = 0
 
-big_pullback = 10
+big_pullback = 0#10
 shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
 shuttle_pullback = -25 #angle pulled back after engaging shuttlecock valve
 breaker_dist = 62 #distance between middle switch in breaker and side switch in mm
 breaker_a_middle = 13
 breaker_b_middle = -14
 breaker_pullback = 20 #distance pulled back after flipping breaker in mm
-big_cw_gap = 42 #gap from green marker on big valve to arm in cw direction
-big_ccw_gap = 20 #gap from green marker on big valve to arm in ccw direction
+big_cw_gap = 0#42 #gap from green marker on big valve to arm in cw direction
+big_ccw_gap = 0#20 #gap from green marker on big valve to arm in ccw direction
 max_offset = 153 #maximum reachable offset of the arm in mm
 
 missions = parse.parse_mission("mission_file.txt")
