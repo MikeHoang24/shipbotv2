@@ -101,7 +101,7 @@ for mission in missions:
         s.set_station(chr((ord(s.c_s)+1)))
     else:
         if not hand_input:
-            (cv_off, cv_green, cv_ori) = cvcontrol.processCommand(mission[1]) #Computer Vision
+            (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1]) #Computer Vision
             cv_ori = hand.get_ori(ord(s.c_s)-ord("A")) #comment out to use orientation
             cv_off = 0 #comment out to get offset
         else:
@@ -115,10 +115,10 @@ for mission in missions:
         else:
             if cv_off < -max_L:
                 s.move_l(cv_off)
-                (cv_off, cv_green, cv_ori) = cvcontrol.processCommand(mission[1])
+                (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1])
             elif cv_off > max_L:
                 s.move_r(cv_off)
-                (cv_off, cv_green, cv_ori) = cvcontrol.processCommand(mission[1])
+                (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1])
         (up, theta1, theta2) = offset.offset_valves(cv_off, max_L)
         if (mission[1] == "V1"): #SMALL VALVE
             target_angle = int(mission[2])
