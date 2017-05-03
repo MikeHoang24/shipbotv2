@@ -4,7 +4,7 @@ import numpy as np
 ORIENT_UP = "H"
 ORIENT_SIDE = "V"
 
-DISTANCE_SCALE = 0.4375
+DISTANCE_SCALE = -0.4375
 ROBOTAXIS = 600
 
 # Detects a shuttlecock device (front-facing only!)
@@ -16,8 +16,8 @@ class Shuttlecock:
     blue_high = [135, 255, 255]
 
     # HSV Pipe Ranges
-    white_low = [95, 0, 190]
-    white_high = [105, 50, 240]
+    white_low = [95, 0, 120]
+    white_high = [110, 50, 240]
 
     thresh_wide_low = 1.5
     thresh_wide_high = 5.5
@@ -45,13 +45,15 @@ class Shuttlecock:
         return (area <= self.area_max and area >= self.area_min)
 
     def checkRatio(self, ratio):
-        if (abs(5 - ratio) < 1):
+        if (abs(5 - ratio) < 2):
             # print(ratio)
-            return (True, "up", 0)
+            # print("hi")
+            return (True, ORIENT_SIDE, 90)
         elif (abs(2 - ratio) < 1):
             # print(ratio)
-            return (True, "up", 90)
+            return (True, ORIENT_UP, 90)
         elif (abs(.5 - ratio) < .3):
+            # print(ratio)
             return (False, None, None)
         # print(ratio)
         return False
@@ -71,10 +73,17 @@ class Shuttlecock:
                 box = np.int0(box)
                 area = dim[0] * dim[1]
                 ratio = dim[1] / dim[0]
+                cv2.drawContours(image, [box], 0, (255, 255, 0), 1)
                 if (area > self.area_min_pipe and area < self.area_max_pipe):
                     cv2.drawContours(image, [box], 0, (255, 255, 0), 2)
                     if ((abs(ratio - 2) < .5) or (abs(ratio - 1) < .5)):
-                        if (abs(angle) < 20):
+                        if (abs(angle) < 10):
+                            cv2.drawContours(image, [box], 0, (0, 255, 0), 3)
+                            #print("angle: " + str(angle))
+                            #print("ratio: " + str(ratio))
+                            #print("Found horizontal pipe?")
+                            return 0
+                        elif (abs(angle) > 80):
                             cv2.drawContours(image, [box], 0, (0, 255, 0), 3)
                             #print("angle: " + str(angle))
                             #print("ratio: " + str(ratio))
@@ -86,7 +95,8 @@ class Shuttlecock:
                             #print("ratio: " + str(ratio))
                             #print("found a vertical pipe maybe????")
                             return 90
-        return False
+        # print("hi")
+        return 90
 
     # Recieves a path to an image, returns ( offset, orientation, angle )
     def processImage(self, path):
@@ -121,7 +131,10 @@ class Shuttlecock:
             box = cv2.boxPoints(rect)
             box = np.int0(box)
             area = dim[0] * dim[1]
-            ratio = dim[1] / dim[0]
+            if (abs(angle) < 45):
+                ratio = dim[1] / dim[0]
+            else:
+                ratio = dim[0] / dim[1]
             cv2.drawContours(image, [box], 0, (0, 0, 255), 1)
 
             if (not self.checkArea(area)):
@@ -129,6 +142,7 @@ class Shuttlecock:
                 continue
 
             cv2.drawContours(image, [box], 0, (0, 0, 255), 2)
+            # print(angle)
             ratio_check = self.checkRatio(ratio)
             if (ratio_check == False):
                 # Move on, not of a known ratio
@@ -137,35 +151,37 @@ class Shuttlecock:
             cv2.drawContours(image, [box], 0, (0, 0, 255), 3)
             ret, orient, meas_angle = ratio_check
             if (ret):
-                #print("skipped pipe angle calc")
+                # print("skipped pipe angle calc")
                 # We could distinguish by ratio
                 if (angle == 90):
                     offset = ROBOTAXIS - center[1]
                 else:
                     offset = ROBOTAXIS - (center[1] - 100)
                 # self.renderImage(image)
-                return (int(offset), orient, meas_angle)
+                return (int(offset * DISTANCE_SCALE), meas_angle, orient)
             else:
                 # we couldn't distinguish
+                #print("Device box angle: " + str(angle))
                 pipe_angle = self.getPipeAngle(hsv_image, image)
+                #print("Pipe angle: " + str(pipe_angle))
                 # self.renderImage(image)
                 if (abs(pipe_angle) - abs(angle)) < 20:
                     # We could distinguish by ratio
-                    if (angle == 90):
+                    if (abs(angle) > 45):
                         offset = ROBOTAXIS - center[1]
-                        return (int(offset), "up", 90)
+                        return (int(offset * DISTANCE_SCALE), 0, ORIENT_SIDE)
                     else:
                         offset = ROBOTAXIS - (center[0] - 100)
-                        return (int(offset), "side", 90)
+                        return (int(offset * DISTANCE_SCALE), 90, ORIENT_SIDE)
                 else:
-                    if (angle == 90):
+                    if (abs(angle) >= 45):
                         offset = ROBOTAXIS - center[1]
-                        return (int(offset), "up", 0)
+                        return (int(offset * DISTANCE_SCALE), 0, ORIENT_SIDE)
                     else:
                         offset = ROBOTAXIS - (center[1] - 100)
-                        return (int(offset), "side", 0)
+                        return (int(offset * DISTANCE_SCALE), 0, ORIENT_SIDE)
         # self.renderImage(image)
-        return
+        return (0, 0, ORIENT_SIDE)
 
     def renderImage(self, image):
         cv2.imshow("image", image)
@@ -233,7 +249,7 @@ class BreakerBox:
                 # cv2.imshow("image", image)
                 # cv2.waitKey(0)
                 # cv2.destroyAllWindows()
-                return (int(x_offset), self.orient, int(self.theta))
+                return (int(x_offset), int(self.theta), self.orient)
         return False
 
 
@@ -265,7 +281,8 @@ class ValveSmall:
     def inRange(self, area, ratio):
         if (area < self.area_min):
             return (False, None)
-
+	
+	ratio = 1/ratio
         print("ratio was: " + str(ratio))
         if ratio < .75:
             if (ratio > self.rp_max or ratio < self.rp_min):
@@ -379,7 +396,7 @@ class ValveSmall:
                     # cv2.imshow("image", image)
                     # cv2.waitKey(0)
                     # cv2.destroyAllWindows()
-                    return (int(x_offset), orient, int(theta))
+                    return (int(x_offset), int(theta), orient)
         return False
 
 # Detects a large valve (orange!)
@@ -519,7 +536,7 @@ class ValveLarge:
                     #cv2.imshow("image", image)
                     # cv2.waitKey(0)
                     # cv2.destroyAllWindows()
-                    return (int(x_offset), orient, int(theta))
+                    return (int(x_offset), int(theta), orient)
 
         #cv2.imshow("image", image)
         # cv2.waitKey(0)

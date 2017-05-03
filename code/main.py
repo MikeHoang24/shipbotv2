@@ -10,7 +10,7 @@ import station
 import parse
 import state
 import offset
-import capture
+import CVController as cvcontrol
 import hand
 import time
 
@@ -21,7 +21,7 @@ debug = False #set to True when debugging code
 hand_input = True #set to True to turn computer vision off
 
 if not hand_input:
-    import picamera
+    cvc = cvcontrol()
 
 stationD_x = 254 #distance robot needs to move from station D to station E
 stationG_y = 229 #distance robot needs to move from station F to station G
@@ -81,9 +81,6 @@ s.set_hebiall(init_hebi0, init_hebi1, init_hebi2)
 
 raw_input("Press ENTER to start mission...")
 
-if not hand_input:
-    camera = picamera.PiCamera()
-
 s.move_f() #Moving forward until hitting the wall (just in case)
 for mission in missions:
     while (ord(mission[0]) > ord(s.c_s)):
@@ -104,7 +101,9 @@ for mission in missions:
         s.set_station(chr((ord(s.c_s)+1)))
     else:
         if not hand_input:
-            (cv_off, cv_green, cv_ori) = capture.cv_info(camera, mission[1]) #Computer Vision
+            (cv_off, cv_green, cv_ori) = cvcontrol.processCommand(mission[1]) #Computer Vision
+            cv_ori = hand.get_ori(ord(s.c_s)-ord("A")) #comment out to use orientation
+            cv_off = 0 #comment out to get offset
         else:
             cv_off = 0
             cv_green = hand.get_angle(ord(s.c_s)-ord("A"))
@@ -116,10 +115,10 @@ for mission in missions:
         else:
             if cv_off < -max_L:
                 s.move_l(cv_off)
-                (cv_off, cv_green, cv_ori) = capture.cv_info(mission[1])
+                (cv_off, cv_green, cv_ori) = cvcontrol.processCommand(mission[1])
             elif cv_off > max_L:
                 s.move_r(cv_off)
-                (cv_off, cv_green, cv_ori) = capture.cv_info(mission[1])
+                (cv_off, cv_green, cv_ori) = cvcontrol.processCommand(mission[1])
         (up, theta1, theta2) = offset.offset_valves(cv_off, max_L)
         if (mission[1] == "V1"): #SMALL VALVE
             target_angle = int(mission[2])
@@ -145,10 +144,8 @@ for mission in missions:
             s.set_y(s.c_d.y1)
             if rotate > 0:
                 s.rotate_hebi2(rotate + big_cw_gap)
-                s.rotate_hebi2(-big_pullback)
             else:
                 s.rotate_hebi2(rotate - big_ccw_gap)
-                s.rotate_hebi2(big_pullback)
         elif (mission[1] == "A" or mission[1] == "B"): #BREAKERS
             target = mission[2]
             s.c_d = devices.Breaker(mission[1])
@@ -169,17 +166,8 @@ for mission in missions:
                 y_in -= abs(cv_off)/20
             s.set_z(s.c_d.z0+up)
             s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1+theta1, s.c_d.hebi2+theta2)
-            #if (target == "B1" or target == "B3"):
-            #    y_calibrate = s.c_d.y0 + 2
-            #else:
-            #    y_calibrate = s.c_d.y0
             s.set_y(y_in)
             s.set_z(s.c_d.z1+up)
-            if (s.c_d.z1 > s.c_d.z0):
-                s.offset_z(-breaker_pullback)
-            else:
-                assert(s.c_d.z1 < s.c_d.z0)
-                s.offset_z(breaker_pullback)
         elif (mission[1] == "V3"): #SHUTTLECOCK
             target = int(mission[2])
             s.c_d = devices.Shuttle(cv_ori)
@@ -189,12 +177,10 @@ for mission in missions:
                     s.set_hebiall(s.c_d.hebi0c, s.c_d.hebi1c + theta1, s.c_d.hebi2c + theta2)
                     s.set_y(s.c_d.y0)
                     s.rotate_hebi2(-shuttle_rotate)
-                    s.rotate_hebi2(-shuttle_pullback)
                 elif (target == 1):
                     s.set_hebiall(s.c_d.hebi0o, s.c_d.hebi1o + theta1, s.c_d.hebi2o + theta2)
                     s.set_y(s.c_d.y0)
                     s.rotate_hebi2(shuttle_rotate)
-                    s.rotate_hebi2(shuttle_pullback)
                 else:
                     print("Invalid shuttle target")
             elif (cv_ori == "H"):
@@ -204,14 +190,12 @@ for mission in missions:
                     s.set_y(s.c_d.y0-up)
                     s.set_z(s.c_d.z1)
                     s.rotate_hebi2(-shuttle_rotate)
-                    s.rotate_hebi2(-shuttle_pullback)
                     s.set_z(s.c_d.z0)
                 elif (target == 1):
                     s.set_hebiall(s.c_d.hebi0o, s.c_d.hebi1o + theta1, s.c_d.hebi2o + theta2)
                     s.set_y(s.c_d.y0-up)
                     s.set_z(s.c_d.z1)
                     s.rotate_hebi2(shuttle_rotate)
-                    s.rotate_hebi2(shuttle_pullback)
                     s.set_z(s.c_d.z0)
                     
         else:

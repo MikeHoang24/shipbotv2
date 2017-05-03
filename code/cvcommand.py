@@ -7,10 +7,8 @@ Created on Tue May 02 17:08:35 2017
 
 import CVController
 
-capture = CVController()
+capture = CVController.CVController()
 
-val = raw_input("Insert Valve Type: ")
-
-(offset, angle, orientation) = capture.processCommand(val)
+(offset, angle, orientation) = capture.processCommand("V1")
 
 
