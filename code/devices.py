@@ -5,7 +5,7 @@ Created on Tue Apr 25 19:08:43 2017
 @author: Michu
 """
 
-hebi2_zero = -44
+hebi2_zero = 45
 
 class Device:
     def __init__(self, name):
@@ -52,8 +52,8 @@ class Small(Device):
         Device.__init__(self, "Small")
         self.ori = ori
         if (ori == "V"):
-            self.y0 = 145
-            self.y1 = 145
+            self.y0 = 150
+            self.y1 = 150
             self.z0 = 10
             self.z1 = 10
             self.hebi0 = 0
@@ -63,7 +63,7 @@ class Small(Device):
             self.y0 = 164
             self.y1 = 164
             self.z0 = 335
-            self.z1 = 300
+            self.z1 = 295
             self.hebi0 = -90
             self.hebi1 = 0
             self.hebi2 = hebi2_zero+180
@@ -84,27 +84,29 @@ class Shuttle(Device): #0 = open, 1 = closed
         Device.__init__(self, "Shuttle")
         self.ori = ori
         if ori == "V":
-            self.y0 = 150
-            self.y1 = 150
+            #self.y0 = 145
+            #self.y1 = 145
+            self.y0 = 135
+            self.y1 = 135
             self.z0 = 7
             self.z1 = 7
             self.hebi0o = 0
             self.hebi1o = 0
-            self.hebi2o = hebi2_zero - 37
+            self.hebi2o = hebi2_zero
             self.hebi0c = 0
             self.hebi1c = 0
-            self.hebi2c = hebi2_zero + 133
+            self.hebi2c = hebi2_zero + 90
         elif ori == "H":
-            self.y0 = 81
-            self.y1 = 81
-            self.z0 = 360
-            self.z1 = 325
+            self.y0 = 91
+            self.y1 = 91
+            self.z0 = 340
+            self.z1 = 305
             self.hebi0o = -90
             self.hebi1o = 0
-            self.hebi2o = hebi2_zero + 53
+            self.hebi2o = hebi2_zero + 90
             self.hebi0c = -90
             self.hebi1c = 0
-            self.hebi2c = hebi2_zero + 213
+            self.hebi2c = hebi2_zero + 180
         
 class Breaker(Device):
     def __init__(self, letter):
@@ -114,15 +116,19 @@ class Breaker(Device):
             self.hebi0 = 0
             self.hebi1 = 0
             self.hebi2 = hebi2_zero + 180
-            self.y0 = 144
-            self.y1 = 144
-            self.z0 = 70
-            self.z1 = 40
+            #self.y0 = 144
+            #self.y1 = 144
+            self.y0 = 118
+            self.y1 = 118
+            #self.z0 = 5
+            #self.z1 = 42
+            self.z0 = 30
+            self.z1 = 7
         elif (letter == "B"):
-            self.z0 = 25
-            self.z1 = 59
-            self.y0 = 154
-            self.y1 = 154
+            self.z0 = 7
+            self.z1 = 25
+            self.y0 = 122
+            self.y1 = 122
             self.hebi0 = 0
             self.hebi1 = 0
             self.hebi2 = hebi2_zero + 180

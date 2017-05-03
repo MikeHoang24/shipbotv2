@@ -28,7 +28,7 @@ stationG_y = 229 #distance robot needs to move from station F to station G
 station_dist = 303 #distance robot needs to move from station to a neighboring one
 max_L = 153
 max_L2 = max_L + 35
-init_station = "F"
+init_station = "A"
 
 s = state.state(drive_port, stepper_port, hebi_fname, init_station, debug) #initialize robot state
 #X-coord, Y-coord, Orientation (0/1 = Short/Long side)
@@ -60,15 +60,17 @@ init_hebi1 = 0
 init_hebi2 = 0
 
 big_pullback = 0#10
-shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
-shuttle_pullback = -25 #angle pulled back after engaging shuttlecock valve
-breaker_dist = 62 #distance between middle switch in breaker and side switch in mm
-breaker_a_middle = 13
-breaker_b_middle = -14
-breaker_pullback = 20 #distance pulled back after flipping breaker in mm
+shuttle_rotate = 100 #rotation needed to turn shuttlecock valve by 90 degrees
+shuttle_pullback = 0 #angle pulled back after engaging shuttlecock valve
+breaker_dist = 53 #distance between middle switch in breaker and side switch in mm
+breaker_a_middle = 15
+breaker_b_middle = -5
+breaker_pullback = 0 #distance pulled back after flipping breaker in mm
 big_cw_gap = 0#42 #gap from green marker on big valve to arm in cw direction
 big_ccw_gap = 0#20 #gap from green marker on big valve to arm in ccw direction
 max_offset = 153 #maximum reachable offset of the arm in mm
+E_offset = 70
+F_offset = -100 #-88
 
 missions = parse.parse_mission("mission_file.txt")
 
@@ -108,9 +110,9 @@ for mission in missions:
             cv_green = hand.get_angle(ord(s.c_s)-ord("A"))
             cv_ori = hand.get_ori(ord(s.c_s)-ord("A"))
         if (s.c_s == "E"):
-            cv_off = 70
+            cv_off = E_offset
         elif (s.c_s == "F"):
-            cv_off = -86
+            cv_off = F_offset
         else:
             if cv_off < -max_L:
                 s.move_l(cv_off)
@@ -163,8 +165,8 @@ for mission in missions:
                 assert(target == "B2")
                 (up, theta1, theta2) = offset.offset_breakers(cv_off+breaker_middle, max_L, max_L2)
             y_in = s.c_d.y0
-            if cv_off > 59:
-                y_in -= cv_off/20
+            if abs(cv_off) > 59:
+                y_in -= abs(cv_off)/20
             s.set_z(s.c_d.z0+up)
             s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1+theta1, s.c_d.hebi2+theta2)
             #if (target == "B1" or target == "B3"):

@@ -1,5 +1,5 @@
 A V
-B V
+B H
 C V
 D H
 E H
