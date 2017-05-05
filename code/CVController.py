@@ -1,7 +1,7 @@
 # OOP implementation of new CV controller
 from DeviceRecognition import *
 import picamera
-import time
+
 
 class CVController:
     capture_path = "imgs/capture.jpg"  # path to write new captures to
@@ -13,16 +13,15 @@ class CVController:
     # Command should be V1, V2, V3, or B
     def processCommand(self, device_code=None):
         # Case on extracted device code!
-        time.sleep(1)
-        if (device_code is "V1"):
+        if (device_code == "V1"):
             device = ValveSmall()
-        elif (device_code is "V2"):
+        elif (device_code == "V2"):
             # device is large valve
             device = ValveLarge()
-        elif (device_code is "V3"):
+        elif (device_code == "V3"):
             # device is shuttlecock
             device = Shuttlecock()
-        elif (device_code is "B" or device_code is "A"):
+        elif (device_code == "B" or device_code == "A"):
             # device is breaker box
             device = BreakerBox()
         else:

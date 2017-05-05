@@ -5,7 +5,7 @@ Created on Tue Apr 25 19:08:43 2017
 @author: Michu
 """
 
-hebi2_zero = 45
+hebi2_zero = -43
 
 class Device:
     def __init__(self, name):
@@ -52,8 +52,8 @@ class Small(Device):
         Device.__init__(self, "Small")
         self.ori = ori
         if (ori == "V"):
-            self.y0 = 150
-            self.y1 = 150
+            self.y0 = 140
+            self.y1 = 140
             self.z0 = 10
             self.z1 = 10
             self.hebi0 = 0

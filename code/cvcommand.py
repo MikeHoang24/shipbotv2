@@ -11,4 +11,6 @@ capture = CVController.CVController()
 
 (offset, angle, orientation) = capture.processCommand("V1")
 
-
+print offset
+print angle
+print orientation

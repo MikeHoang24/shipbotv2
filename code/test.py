@@ -1,22 +1,33 @@
-import multiprocessing
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Apr 26 23:24:52 2017
+
+@author: Michu
+"""
+
+import serial
 import time
 
-def worker():
-    """thread worker function"""
-    print 'Worker:'
-    lol = 0
-    for i in range(2):
-        print(lol)
-        lol += 1
-        time.sleep(1)
-    return
+drive_port = "COM6"
+stepper_port = "COM3"
 
-if __name__ == '__main__':
-    jobs = []
-    p = multiprocessing.Process(target=worker)
-    jobs.append(p)
-    p.start()
-    for i in range(2):
-        print("b")
-        time.sleep(1)
-    multiprocessing.Process(target=worker).start()
+ser = serial.Serial(drive_port, 9600, timeout=5)
+time.sleep(1)
+ser.write("f\n")
+line = ser.readline()
+while not ("DONE" in line):
+    line = ser.readline()
+print(line)
+print ("drive test complete")
+ser.close()
+
+
+
+ser2 = serial.Serial(stepper_port, 9600, timeout=5)
+time.sleep(2)
+ser2.write("zi")
+ser2.flush()
+line = ser2.readline()
+print(line)
+print("stepper test complete")
+ser2.close()

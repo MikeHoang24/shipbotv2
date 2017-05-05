@@ -21,7 +21,7 @@ debug = False #set to True when debugging code
 hand_input = True #set to True to turn computer vision off
 
 if not hand_input:
-    cvc = cvcontrol()
+    cvc = cvcontrol.CVController()
 
 stationD_x = 254 #distance robot needs to move from station D to station E
 stationG_y = 229 #distance robot needs to move from station F to station G
@@ -53,9 +53,9 @@ rest_hebi1 = 0
 rest_hebi2 = 0
 
 #Initial positions
-init_y = 250
+init_y = 270
 init_z = 10
-init_hebi0 = 0
+init_hebi0 = -90
 init_hebi1 = 0
 init_hebi2 = 0
 
@@ -103,7 +103,7 @@ for mission in missions:
         if not hand_input:
             (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1]) #Computer Vision
             cv_ori = hand.get_ori(ord(s.c_s)-ord("A")) #comment out to use orientation
-            cv_off = 0 #comment out to get offset
+            #cv_off = 0 #comment out to get offset
         else:
             cv_off = 0
             cv_green = hand.get_angle(ord(s.c_s)-ord("A"))
@@ -128,7 +128,7 @@ for mission in missions:
             if cv_ori == "V":
                 s.set_z(s.c_d.z1 + up)
                 s.set_y(s.c_d.y1)
-                s.set_hebi2(s.hebi2 + rotate)
+                s.set_hebi2(s.hebi2 + rotate*1.25)
             elif cv_ori == "H":
                 s.set_z(s.c_d.z0)
                 s.set_y(s.c_d.y0 - up)
@@ -143,9 +143,9 @@ for mission in missions:
             s.set_z(s.c_d.z1 + up)
             s.set_y(s.c_d.y1)
             if rotate > 0:
-                s.rotate_hebi2(rotate + big_cw_gap)
+                s.rotate_hebi2(rotate*1.20 + big_cw_gap)
             else:
-                s.rotate_hebi2(rotate - big_ccw_gap)
+                s.rotate_hebi2(rotate*1.20 - big_ccw_gap)
         elif (mission[1] == "A" or mission[1] == "B"): #BREAKERS
             target = mission[2]
             s.c_d = devices.Breaker(mission[1])
@@ -161,6 +161,7 @@ for mission in missions:
             else:
                 assert(target == "B2")
                 (up, theta1, theta2) = offset.offset_breakers(cv_off+breaker_middle, max_L, max_L2)
+		theta2 += 90
             y_in = s.c_d.y0
             if abs(cv_off) > 59:
                 y_in -= abs(cv_off)/20

@@ -372,7 +372,7 @@ class ValveSmall:
             box = np.int0(box)
             # cv2.drawContours(image,[box],0,(255,0,0),1)
             if (dim[0] > 0 and dim[1] > 0):
-                area = dim[0] * dim[1]
+                area = cv2.contourArea(cnt)
                 ratio = dim[1] / dim[0]
                 ret, orient = self.inRange(area, ratio)
                 if (ret):
