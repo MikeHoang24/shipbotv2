@@ -35,9 +35,11 @@ class audioControl():
     
     def play_device(self,device):
         #self.play("device")
-        mix.music.queue('sound/'+device+'.wav')
-        mix.music.queue('sound/station.wav')
-        mix.music.queue('sound/'+device+'.wav')
+#        mix.music.queue('sound/'+device+'.wav')
+#        mix.music.queue('sound/station.wav')
+#        mix.music.queue('sound/'+device+'.wav')
+#        mix.music.queue('sound/C.wav')
+        self.play("A")
         if device == "V1":
             fname = "small"
         elif device == "V2":
@@ -50,10 +52,13 @@ class audioControl():
             fname = "error"
 
         self.play(fname)
+        time.sleep(1)
         if device == "A":
-            self.play("A")
-        elif device == "B":
+            self.play("E")
+        if device == "B":
             self.play("B")
+        #if True:
+        #    self.play("F")
     
 
     def old_play(self,fname):
