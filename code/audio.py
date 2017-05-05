@@ -5,8 +5,6 @@ Created on Thu May 04 13:57:02 2017
 @author: Michu
 """
 
-import pyaudio as pa
-import wave
 from pygame import mixer as mix
 import time
 
@@ -14,7 +12,8 @@ CHUNK = 1024
 
 class audioControl():
     def __init__(self):
-        self.maxChannels = mix.get_num_channels()
+        mix.init()
+	self.maxChannels = mix.get_num_channels()
         self.info = 0
         self.music = 1
         
@@ -51,15 +50,15 @@ class audioControl():
         else:
             fname = "error"
 
-        self.play(fname)
-        time.sleep(1)
+        self.play("move2")
+        time.sleep(5)
         if device == "A":
             self.play("E")
         if device == "B":
             self.play("B")
         #if True:
         #    self.play("F")
-    
+ 	self.play("move0")   
 
     def old_play(self,fname):
         
@@ -89,3 +88,6 @@ class audioControl():
 #play("device")
 audiocontrol = audioControl()
 audiocontrol.play_device("A")
+audiocontrol.play("breaker")
+audiocontrol.play("A")
+mix.Channel(0).play(mix.Sound("sound/move0.wav"))
