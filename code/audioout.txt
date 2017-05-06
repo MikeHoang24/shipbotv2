@@ -1,0 +1,478 @@
+init info player
+in flush
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+['initialize']
+channel free
+1
+playing initialize
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
