@@ -191,7 +191,7 @@ class Shuttlecock:
 
 class BreakerBox:
     # HSB Color Range (Valve)
-    hsb_low = [0, 80, 120]
+    hsb_low = [0, 80, 140]
     hsb_high = [40, 255, 255]
 
     orient = ORIENT_SIDE
@@ -242,6 +242,9 @@ class BreakerBox:
                 #                    box = cv2.boxPoints(rect)
                 #                    box = np.int0(box)
                     #x_offset = ROBOTAXIS - center[1]
+		x = x+w/2
+		y = y+h/2
+
                 x_offset = ROBOTAXIS - y
                 x_offset = x_offset * DISTANCE_SCALE
                 print("Detected Breaker!")
@@ -281,19 +284,12 @@ class ValveSmall:
     def inRange(self, area, ratio):
         if (area < self.area_min):
             return (False, None)
-	
-	ratio = 1/ratio
+
         print("ratio was: " + str(ratio))
-        if ratio < .75:
-            if (ratio > self.rp_max or ratio < self.rp_min):
-                return (False, None)
-            else:
-                return (True, ORIENT_UP)
+        if (ratio < 0.75 or ratio > 1.4):
+            return (True, ORIENT_UP)
         else:
-            if (ratio > self.rf_max or ratio < self.rf_min):
-                return (False, None)
-            else:
-                return (True, ORIENT_SIDE)
+            return (True, ORIENT_SIDE)
 
     def inBounds(self, bounds, sel):
         (bound_x, bound_y) = bounds[0]
@@ -368,15 +364,14 @@ class ValveSmall:
             center, dim, angle = rect
 #            center = (corner[0] + (dim[0]/2), corner[1] + dim[1]/2)
 
-            box = cv2.boxPoints(rect)
-            box = np.int0(box)
+#             box = cv2.boxPoints(rect)
+#             box = np.int0(box)
             # cv2.drawContours(image,[box],0,(255,0,0),1)
             if (dim[0] > 0 and dim[1] > 0):
                 area = cv2.contourArea(cnt)
                 ratio = dim[1] / dim[0]
                 ret, orient = self.inRange(area, ratio)
                 if (ret):
-
                     box = cv2.boxPoints(rect)
                     box = np.int0(box)
                     x_offset = ROBOTAXIS - center[1]
@@ -385,7 +380,7 @@ class ValveSmall:
                     mark_center = self.findMarker(image, hsv_image, rect)
                     if not mark_center:
                         print("Didn't find mark!")
-                        theta = 0
+                        return False
                     else:
                         theta = self.calculateAngle(center, mark_center)
 
@@ -446,7 +441,7 @@ class ValveLarge:
                 #print (" * Bad Ratio: " + str(ratio))
                 return (False, None)
             else:
-                return (True, ORIENT_UP)
+                return (True, ORIENT_SIDE)
 
     def inBounds(self, bounds, sel):
         (bound_x, bound_y) = bounds[0]
@@ -529,7 +524,12 @@ class ValveLarge:
                     x_offset = x_offset * DISTANCE_SCALE
                     # cv2.drawContours(image,[box],0,(0,0,255),3)
                     mark_center = self.findMarker(image, hsv_image, rect)
-                    theta = self.calculateAngle(center, mark_center)
+                    if not mark_center:
+                        print("Did not find marker")
+                        return False
+                    else:
+                        theta = self.calculateAngle(center, mark_center)
+                        
                     print("Detected large valve!")
                     print(" - Horizontal offset: " + str(x_offset))
                     print(" - Angle: " + str(theta))

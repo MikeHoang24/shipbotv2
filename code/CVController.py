@@ -1,6 +1,7 @@
 # OOP implementation of new CV controller
 from DeviceRecognition import *
 import picamera
+import time
 
 
 class CVController:
@@ -27,12 +28,21 @@ class CVController:
         else:
             print("Unrecognized device code.")
             return (0, 0, "V")
-        self.camera.resolution = (1600, 1200)
-        self.camera.capture(self.capture_path, format='jpeg')
-        retval = device.processImage(self.capture_path)
-        if not retval:
-            print("Detect FAILED!")
-            return (0, 0, "V")
-        else:
-            print("Successful detection!")
-        return retval
+        
+        count = 0
+        while count<10:
+            self.camera.capture(self.capture_path, format='jpeg')
+            retval = device.processImage(self.capture_path)
+            if not retval:
+                print("Detect FAILED!")
+            else:
+                print("Successful detection!")
+                return retval
+            count = count+1
+            time.sleep(1)     
+        print("Detect timeout")    
+        return (0,0,'V')
+        
+    
+    def __del__(self):
+        self.camera.close()

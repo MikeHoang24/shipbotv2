@@ -9,7 +9,9 @@ import CVController
 
 capture = CVController.CVController()
 
-(offset, angle, orientation) = capture.processCommand("V1")
+device = raw_input("type in device:")
+
+(offset, angle, orientation) = capture.processCommand(device)
 
 print offset
 print angle
