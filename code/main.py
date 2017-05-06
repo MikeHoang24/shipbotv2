@@ -18,9 +18,9 @@ import time
 drive_port = "/dev/ttyACM1"
 stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
-debug = True #set to True when debugging code
-hand_input = True #set to True to turn computer vision off
-audio_on = True
+debug = False #set to True when debugging code
+hand_input = False #set to True to turn computer vision off
+audio_on = False
 
 if not hand_input:
     import CVController as cvcontrol
@@ -33,13 +33,10 @@ max_L = 153
 max_L2 = max_L + 35
 init_station = "A"
 
-big_pullback = 0#10
 shuttle_rotate = 100 #rotation needed to turn shuttlecock valve by 90 degrees
-shuttle_pullback = 0 #angle pulled back after engaging shuttlecock valve
 breaker_dist = 53 #distance between middle switch in breaker and side switch in mm
-breaker_a_middle = 0#15
-breaker_b_middle = 0#-5
-breaker_pullback = 0 #distance pulled back after flipping breaker in mm
+breaker_a_middle = 15
+breaker_b_middle = -5
 max_offset = 153 #maximum reachable offset of the arm in mm
 E_offset = 70
 F_offset = -100 #-88
