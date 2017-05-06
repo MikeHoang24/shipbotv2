@@ -115,7 +115,7 @@ for mission in missions:
         if not hand_input:
             (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1]) #Computer Vision
             cv_ori = hand.get_ori(ord(s.c_s)-ord("A")) #comment out to use orientation
-            #cv_off = 0 #comment out to get offset
+            cv_off = 0 #comment out to get offset
         else:
             cv_off = 0
             cv_green = hand.get_angle(ord(s.c_s)-ord("A"))
