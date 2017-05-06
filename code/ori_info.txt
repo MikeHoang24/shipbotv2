@@ -1,7 +1,7 @@
 A V
-B V
+B H
 C V
-D H
+D V
 E H
 F V
 G V

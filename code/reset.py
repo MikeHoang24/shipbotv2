@@ -19,3 +19,5 @@ while (timeout < TIMEOUT):
 		break
 
 dev.close()
+
+open('audio_queue.txt', 'w').close()
