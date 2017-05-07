@@ -20,7 +20,8 @@ stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
 debug = True #set to True when debugging code
 hand_input = True #set to True to turn computer vision off
-audio_on = True
+audio_on = False
+cv_dict = ["V1","V2","V3","A","B"]
 
 if not hand_input:
     import CVController as cvcontrol
@@ -42,6 +43,7 @@ E_offset = 70
 F_offset = -100 #-88
 slip_big = 1.20
 slip_small = 1.25
+max_angle_diff = 30
 
 audioControl = audio.audioControl(audio_on)
 
@@ -109,10 +111,10 @@ for mission in missions:
     else:
         audioControl.play_station(mission[0])
         audioControl.play_device(mission[1])
-        if not hand_input:
+        if ((not hand_input) and (mission[1] in cv_dict)):
             (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1]) #Computer Vision
             cv_ori = hand.get_ori(ord(s.c_s)-ord("A")) #comment out to use orientation
-            cv_off = 0 #comment out to get offset
+            #cv_off = 0 #comment out to get offset
         else:
             cv_off = 0
             cv_green = hand.get_angle(ord(s.c_s)-ord("A"))
@@ -129,35 +131,65 @@ for mission in missions:
                 s.move_r(cv_off)
                 (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1])
         (up, theta1, theta2) = offset.offset_valves(cv_off, max_L)
-        if (mission[1] == "V1"): #SMALL VALVE
+        
+        #SMALL VALVE
+        if (mission[1] == "V1"): 
+            first_rotate = False
             target_angle = int(mission[2])
-            audioControl.play_valve(cv_green, target_angle)
-            rotate = target_angle - cv_green
-            s.c_d = devices.Small(cv_ori)
-            s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1 + theta1, s.c_d.hebi2 + theta2)
-            if cv_ori == "V":
+            audioControl.play_orientation(cv_ori)
+            audioControl.play_valve_target(target_angle)
+            while ((abs(cv_green - target_angle) > max_angle_diff) or (not first_rotate)):
+                if first_rotate:
+                    audioControl.play_valve_wrong()
+                audioControl.play_valve_detected(cv_green)
+                rotate = target_angle - cv_green
+                s.c_d = devices.Small(cv_ori)
+                s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1 + theta1, s.c_d.hebi2 + theta2)
+                if cv_ori == "V":
+                    s.set_z(s.c_d.z1 + up)
+                    s.set_y(s.c_d.y1)
+                    s.set_hebi2(s.hebi2 + rotate*slip_small)
+                elif cv_ori == "H":
+                    s.set_z(s.c_d.z0)
+                    s.set_y(s.c_d.y0 - up)
+                    s.set_z(s.c_d.z1)
+                    s.set_hebi2(s.hebi2 + rotate)
+                    s.set_z(s.c_d.z0)
+                if hand_input:
+                    break
+                s.set_y(rest_y)
+                s.set_z(rest_z)
+                s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
+                first_rotate = True
+                (dc1, cv_green, dc2) = cvc.processCommand(mission[1])
+            audioControl.play_valve_correct()
+        
+        #BIG VALVE
+        elif (mission[1] == "V2"): 
+            first_rotate = False
+            target_angle = int(mission[2])
+            audioControl.play_valve_target(target_angle)
+            while ((abs(cv_green - target_angle) > max_angle_diff) or (not first_rotate)):
+                if first_rotate:
+                    audioControl.play_valve_wrong()
+                audioControl.play_valve_detected(cv_green)
+                rotate = target_angle - cv_green
+                s.c_d = devices.Big()
+                s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1 + theta1, s.c_d.hebi2 + theta2 + cv_green)
                 s.set_z(s.c_d.z1 + up)
                 s.set_y(s.c_d.y1)
-                s.set_hebi2(s.hebi2 + rotate*slip_small)
-            elif cv_ori == "H":
-                s.set_z(s.c_d.z0)
-                s.set_y(s.c_d.y0 - up)
-                s.set_z(s.c_d.z1)
-                s.set_hebi2(s.hebi2 + rotate)
-                s.set_z(s.c_d.z0)  
-        elif (mission[1] == "V2"): #BIG VALVE
-            target_angle = int(mission[2])
-            audioControl.play_valve(cv_green, target_angle)
-            rotate = target_angle - cv_green
-            s.c_d = devices.Big()
-            s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1 + theta1, s.c_d.hebi2 + theta2 + cv_green)
-            s.set_z(s.c_d.z1 + up)
-            s.set_y(s.c_d.y1)
-            if rotate > 0:
                 s.rotate_hebi2(rotate*slip_big)
-            else:
-                s.rotate_hebi2(rotate*slip_big)
-        elif (mission[1] == "A" or mission[1] == "B"): #BREAKERS
+                if hand_input:
+                    break
+                s.set_y(rest_y)
+                s.set_z(rest_z)
+                s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
+                first_rotate = True
+                (dc1, cv_green, dc2) = cvc.processCommand(mission[1])
+            audioControl.play_valve_correct()
+            
+        #BREAKERS
+        elif (mission[1] == "A" or mission[1] == "B"):
             target = mission[2]
             audioControl.play_breaker(target)
             s.c_d = devices.Breaker(mission[1])
@@ -181,7 +213,9 @@ for mission in missions:
             s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1+theta1, s.c_d.hebi2+theta2)
             s.set_y(y_in)
             s.set_z(s.c_d.z1+up)
-        elif (mission[1] == "V3"): #SHUTTLECOCK
+            
+        #SHUTTLECOCK
+        elif (mission[1] == "V3"):
             target = int(mission[2])
             audioControl.play_shuttlecock(target)
             s.c_d = devices.Shuttle(cv_ori)

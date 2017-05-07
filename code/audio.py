@@ -13,7 +13,7 @@ class audioControl():
     def __init__(self, audio_on):
         mix.init()
         self.info = 0
-        self.music = 1
+        self.music = mix.get_num_channels() - 1
         self.move_i = 0
         self.move_imax = 4
         self.audio_on = audio_on
@@ -21,10 +21,11 @@ class audioControl():
         open(self.fname, 'w').close()
         
     def playMusic(self, fname):
+        print("PLAYING MOVE MUSIC: " + fname)
         if self.audio_on:    
             fname = "sound/" + fname + ".wav"
             stream = mix.Sound(fname)
-            if not mix.Channel(self.music).get_busy:
+            if not mix.Channel(self.music).get_busy():
                 mix.Channel(self.music).play(stream)
         
     def queueInfo(self, streamName):
@@ -71,16 +72,21 @@ class audioControl():
         if device == "B":
             self.queueInfo("B")    
             
-    def play_valve(self, detected, target):
-        self.queueInfo("angle_detected")
-        self.queue_number(detected)
-        self.queueInfo("degrees")
+    def play_valve_target(self, target):
         self.queueInfo("angle_target")
         self.queue_number(target)
         self.queueInfo("degrees")
-        self.queueInfo("angle_rotate")
-        self.queue_number(target-detected)
+        
+    def play_valve_detected(self, detected):
+        self.queueInfo("angle_detected")
+        self.queue_number(detected)
         self.queueInfo("degrees")
+        
+    def play_valve_wrong(self):
+        self.queueInfo("valve_wrong")
+        
+    def play_valve_correct(self):
+        self.queueInfo("valve_correct")
         
     def play_breaker(self, switch):
         self.queueInfo("switch")
