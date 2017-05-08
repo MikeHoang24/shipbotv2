@@ -15,7 +15,7 @@ class audioControl():
         self.info = 0
         self.music = mix.get_num_channels() - 1
         self.move_i = 0
-        self.move_imax = 4
+        self.move_imax = 5
         self.audio_on = audio_on
         self.fname = 'audio_queue.txt'
         open(self.fname, 'w').close()
@@ -47,7 +47,7 @@ class audioControl():
         self.queueInfo("initialize")
         
     def play_terminate(self):
-        self.queueInfo("terminate")
+        self.queueInfo("terminate1")
         
     def play_station(self,letter):
         self.queueInfo("station")
@@ -97,6 +97,8 @@ class audioControl():
             self.queueInfo("close")
         elif finalState == 0:
             self.queueInfo("open")
+        else:
+            self.queueInfo("shuttlecock_correct")
         
     def play_orientation(self, ori):
         if ori == "V":
@@ -108,8 +110,11 @@ class audioControl():
         self.playMusic("move"+str(self.move_i))
         self.move_i = (self.move_i + 1)%self.move_imax
         
-    def play_turn(self):
-        self.playMusic("moveturn")
+    def play_turn(self, duration):
+        if duration == "long":
+            self.playMusic("moveturn_long")
+        elif duration == "short":
+            self.playMusoc("moveturn_short")
         
 #    def old_play(self,fname):
 #        

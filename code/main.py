@@ -18,8 +18,8 @@ import time
 drive_port = "/dev/ttyACM1"
 stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
-debug = False #set to True when debugging code
-hand_input = False #set to True to turn computer vision off
+debug = True #set to True when debugging code
+hand_input = True #set to True to turn computer vision off
 audio_on = True
 cv_dict = ["V1","V2","V3","A","B"]
 
@@ -44,6 +44,7 @@ F_offset = -100 #-88
 slip_big = 1.20
 slip_small = 1.25
 max_angle_diff = 30
+max_feedback = 2
 
 audioControl = audio.audioControl(audio_on)
 
@@ -87,6 +88,16 @@ s.set_hebiall(init_hebi0, init_hebi1, init_hebi2)
 
 raw_input("Press ENTER to start mission...")
 
+def rotate_calc(target, current):
+    v1 = target - current
+    if v1 > 180:
+        return v1-360
+    elif v1 < 180:
+        return v1+360
+    else:
+        return v1
+
+music_on = True
 s.move_f() #Moving forward until hitting the wall (just in case)
 for mission in missions:
     while (ord(mission[0]) > ord(s.c_s)):
@@ -94,17 +105,23 @@ for mission in missions:
         s.set_z(rest_z)
         s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
         if (s.c_s == "D"):
-            audioControl.play_move()
+            if music_on:
+                audioControl.play_move()
             s.move_a("245 0 1 0 0 1")
         elif (s.c_s == "E"):
-            audioControl.play_turn()
+            if music_on:
+                audioControl.play_turn("long")
+            else:
+                audioControl.play_turn("short")
             s.move_a("0 0 1 0 0 0")
         elif (s.c_s == "F"):
-            audioControl.play_move()
+            if music_on:
+                audioControl.play_move()
             s.move_r(stationG_y)
             s.move_f()
         else:
-            audioControl.play_move()
+            if music_on:
+                audioControl.play_move()
             s.move_r(station_dist)
             s.move_f()
         time.sleep(1)
@@ -135,15 +152,15 @@ for mission in missions:
         
         #SMALL VALVE
         if (mission[1] == "V1"): 
-            first_rotate = False
+            count = 0
             target_angle = int(mission[2])
             audioControl.play_orientation(cv_ori)
             audioControl.play_valve_target(target_angle)
-            while ((abs(cv_green - target_angle) > max_angle_diff) or (not first_rotate)):
-                if first_rotate:
+            while (((abs(rotate_calc(target_angle, cv_green)) > max_angle_diff) and count <= max_feedback) or (count == 0)):
+                if count != 0:
                     audioControl.play_valve_wrong()
                 audioControl.play_valve_detected(cv_green)
-                rotate = target_angle - cv_green
+                rotate = rotate_calc(target_angle, cv_green)
                 s.c_d = devices.Small(cv_ori)
                 s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1 + theta1, s.c_d.hebi2 + theta2)
                 if cv_ori == "V":
@@ -161,17 +178,18 @@ for mission in missions:
                 s.set_y(rest_y)
                 s.set_z(rest_z)
                 s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
-                first_rotate = True
+                count += 1
                 (dc1, cv_green, dc2) = cvc.processCommand(mission[1])
             audioControl.play_valve_correct()
+            music_on = False
         
         #BIG VALVE
         elif (mission[1] == "V2"): 
-            first_rotate = False
+            count = 0
             target_angle = int(mission[2])
             audioControl.play_valve_target(target_angle)
-            while ((abs(cv_green - target_angle) > max_angle_diff) or (not first_rotate)):
-                if first_rotate:
+            while (((abs(rotate_calc(target_angle, cv_green)) > max_angle_diff) and count <= max_feedback) or (count == 0)):
+                if count != 0:
                     audioControl.play_valve_wrong()
                 audioControl.play_valve_detected(cv_green)
                 rotate = target_angle - cv_green
@@ -188,6 +206,7 @@ for mission in missions:
                 first_rotate = True
                 (dc1, cv_green, dc2) = cvc.processCommand(mission[1])
             audioControl.play_valve_correct()
+            music_on = False
             
         #BREAKERS
         elif (mission[1] == "A" or mission[1] == "B"):
@@ -214,39 +233,47 @@ for mission in missions:
             s.set_hebiall(s.c_d.hebi0, s.c_d.hebi1+theta1, s.c_d.hebi2+theta2)
             s.set_y(y_in)
             s.set_z(s.c_d.z1+up)
+            music_on = True
             
         #SHUTTLECOCK
         elif (mission[1] == "V3"):
             target = int(mission[2])
-            audioControl.play_shuttlecock(target)
-	    audioControl.play_orientation(cv_ori)
-            s.c_d = devices.Shuttle(cv_ori)
-            if (cv_ori == "V"):
-                s.set_z(s.c_d.z0 + up)
-                if (target == 0):
-                    s.set_hebiall(s.c_d.hebi0c, s.c_d.hebi1c + theta1, s.c_d.hebi2c + theta2)
-                    s.set_y(s.c_d.y0)
-                    s.rotate_hebi2(-shuttle_rotate)
-                elif (target == 1):
-                    s.set_hebiall(s.c_d.hebi0o, s.c_d.hebi1o + theta1, s.c_d.hebi2o + theta2)
-                    s.set_y(s.c_d.y0)
-                    s.rotate_hebi2(shuttle_rotate)
-                else:
-                    print("Invalid shuttle target")
-            elif (cv_ori == "H"):
-                s.set_z(s.c_d.z0)
-                if (target == 0):
-                    s.set_hebiall(s.c_d.hebi0c, s.c_d.hebi1c + theta1, s.c_d.hebi2c + theta2)
-                    s.set_y(s.c_d.y0-up)
-                    s.set_z(s.c_d.z1)
-                    s.rotate_hebi2(-shuttle_rotate)
+            if (((target == 0) and (cv_green == 0)) or ((target == 1) and (cv_green == 1))):
+                audioControl.play_shuttlecock(2)
+                music_on = False
+            else:
+                audioControl.play_orientation(cv_ori)
+                audioControl.play_shuttlecock(target)
+                s.c_d = devices.Shuttle(cv_ori)
+                if (cv_ori == "V"):
+                    s.set_z(s.c_d.z0 + up)
+                    if (target == 0):
+                        s.set_hebiall(s.c_d.hebi0c, s.c_d.hebi1c + theta1, s.c_d.hebi2c + theta2)
+                        s.set_y(s.c_d.y0)
+                        s.rotate_hebi2(-shuttle_rotate)
+                    elif (target == 1):
+                        s.set_hebiall(s.c_d.hebi0o, s.c_d.hebi1o + theta1, s.c_d.hebi2o + theta2)
+                        s.set_y(s.c_d.y0)
+                        s.rotate_hebi2(shuttle_rotate)
+                    else:
+                        print("Invalid shuttle target")
+                elif (cv_ori == "H"):
                     s.set_z(s.c_d.z0)
-                elif (target == 1):
-                    s.set_hebiall(s.c_d.hebi0o, s.c_d.hebi1o + theta1, s.c_d.hebi2o + theta2)
-                    s.set_y(s.c_d.y0-up)
-                    s.set_z(s.c_d.z1)
-                    s.rotate_hebi2(shuttle_rotate)
-                    s.set_z(s.c_d.z0)
+                    if (target == 0):
+                        s.set_hebiall(s.c_d.hebi0c, s.c_d.hebi1c + theta1, s.c_d.hebi2c + theta2)
+                        s.set_y(s.c_d.y0-up)
+                        s.set_z(s.c_d.z1)
+                        s.rotate_hebi2(-shuttle_rotate)
+                        s.set_z(s.c_d.z0)
+                    elif (target == 1):
+                        s.set_hebiall(s.c_d.hebi0o, s.c_d.hebi1o + theta1, s.c_d.hebi2o + theta2)
+                        s.set_y(s.c_d.y0-up)
+                        s.set_z(s.c_d.z1)
+                        s.rotate_hebi2(shuttle_rotate)
+                        s.set_z(s.c_d.z0)
+                    else:
+                        print("Invalid shuttle target")
+                music_on = True
         else:
             print("Invalid device")
         print("Finished Engaging Device: " + s.c_d.name + " at station "
