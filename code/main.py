@@ -205,6 +205,7 @@ for mission in missions:
                 s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
                 first_rotate = True
                 (dc1, cv_green, dc2) = cvc.processCommand(mission[1])
+                count += 1
             audioControl.play_valve_correct()
             music_on = False
             
