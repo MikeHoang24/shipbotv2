@@ -37,11 +37,6 @@ channel free
 0
 in loop
 audio_queue.txt
-[]
-channel free
-0
-in loop
-audio_queue.txt
 ['initialize']
 channel free
 1
@@ -55,6 +50,547 @@ channel busy
 in loop
 channel busy
 in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+['station', 'A', 'device', 'big']
+channel free
+4
+playing station
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['A', 'device', 'big']
+channel free
+3
+playing A
+in loop
+channel busy
+in loop
+audio_queue.txt
+['device', 'big']
+channel free
+2
+playing device
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['big', 'angle_target', '9', '0', 'degrees', 'angle_detected', '2', '4', '9', 'degrees']
+channel free
+10
+playing big
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['angle_target', '9', '0', 'degrees', 'angle_detected', '2', '4', '9', 'degrees']
+channel free
+9
+playing angle_target
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['9', '0', 'degrees', 'angle_detected', '2', '4', '9', 'degrees']
+channel free
+8
+playing 9
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['0', 'degrees', 'angle_detected', '2', '4', '9', 'degrees']
+channel free
+7
+playing 0
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['degrees', 'angle_detected', '2', '4', '9', 'degrees']
+channel free
+6
+playing degrees
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['angle_detected', '2', '4', '9', 'degrees']
+channel free
+5
+playing angle_detected
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['2', '4', '9', 'degrees']
+channel free
+4
+playing 2
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['4', '9', 'degrees']
+channel free
+3
+playing 4
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['9', 'degrees']
+channel free
+2
+playing 9
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['degrees']
+channel free
+1
+playing degrees
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+['valve_wrong', 'angle_detected', '8', '2', 'degrees']
+channel free
+5
+playing valve_wrong
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['angle_detected', '8', '2', 'degrees']
+channel free
+4
+playing angle_detected
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['8', '2', 'degrees']
+channel free
+3
+playing 8
+in loop
+channel busy
+in loop
+audio_queue.txt
+['2', 'degrees']
+channel free
+2
+playing 2
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['degrees']
+channel free
+1
+playing degrees
+in loop
+channel busy
+in loop
+channel busy
+in loop
 channel busy
 in loop
 audio_queue.txt
@@ -213,6 +749,338 @@ channel free
 0
 in loop
 audio_queue.txt
+['valve_wrong', 'angle_detected', '8', '7', 'degrees']
+channel free
+5
+playing valve_wrong
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['angle_detected', '8', '7', 'degrees']
+channel free
+4
+playing angle_detected
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['8', '7', 'degrees']
+channel free
+3
+playing 8
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['7', 'degrees']
+channel free
+2
+playing 7
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['degrees']
+channel free
+1
+playing degrees
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+['valve_correct']
+channel free
+1
+playing valve_correct
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
 []
 channel free
 0
@@ -246,7 +1114,167 @@ audio_queue.txt
 []
 channel free
 0
+in loop
+audio_queue.txt
+['station', 'C', 'device', 'small']
+channel free
+4
+playing station
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['C', 'device', 'small']
+channel free
+3
+playing C
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['device', 'small', 'vertical', 'angle_target', '1', '8', '0', 'degrees', 'angle_detected', '3', '4', '9', 'degrees']
+channel free
+13
+playing device
+in loop
+audio_queue.txt
+['small', 'vertical', 'angle_target', '1', '8', '0', 'degrees', 'angle_detected', '3', '4', '9', 'degrees']
+channel free
+12
+playing small
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['vertical', 'angle_target', '1', '8', '0', 'degrees', 'angle_detected', '3', '4', '9', 'degrees']
+channel free
+11
+playing vertical
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['angle_target', '1', '8', '0', 'degrees', 'angle_detected', '3', '4', '9', 'degrees']
+channel free
+10
+playing angle_target
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['1', '8', '0', 'degrees', 'angle_detected', '3', '4', '9', 'degrees']
+channel free
+9
+playing 1
+in loop
+channel busy
+in loop
+audio_queue.txt
+['8', '0', 'degrees', 'angle_detected', '3', '4', '9', 'degrees']
+channel free
+8
+playing 8
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['0', 'degrees', 'angle_detected', '3', '4', '9', 'degrees']
+channel free
+7
+playing 0
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['degrees', 'angle_detected', '3', '4', '9', 'degrees']
+channel free
+6
+playing degrees
 in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['angle_detected', '3', '4', '9', 'degrees']
+channel free
+5
+playing angle_detected
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['3', '4', '9', 'degrees']
+channel free
+4
+playing 3
+in loop
+channel busy
+in loop
+audio_queue.txt
+['4', '9', 'degrees']
+channel free
+3
+playing 4
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['9', 'degrees']
+channel free
+2
+playing 9
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['degrees']
+channel free
+1
+playing degrees
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
 audio_queue.txt
 []
 channel free
@@ -266,8 +1294,82 @@ audio_queue.txt
 []
 channel free
 0
+in loop
+audio_queue.txt
+['valve_wrong', 'angle_detected', '1', '9', '2', 'degrees']
+channel free
+6
+playing valve_wrong
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['angle_detected', '1', '9', '2', 'degrees']
+channel free
+5
+playing angle_detected
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['1', '9', '2', 'degrees']
+channel free
+4
+playing 1
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['9', '2', 'degrees']
+channel free
+3
+playing 9
+in loop
+channel busy
+in loop
+channel busy
 in loop
 audio_queue.txt
+['2', 'degrees']
+channel free
+2
+playing 2
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['degrees']
+channel free
+1
+playing degrees
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
 []
 channel free
 0
@@ -396,7 +1498,71 @@ audio_queue.txt
 []
 channel free
 0
+in loop
+audio_queue.txt
+['valve_wrong', 'angle_detected', '8', '2', 'degrees']
+channel free
+5
+playing valve_wrong
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['angle_detected', '8', '2', 'degrees']
+channel free
+4
+playing angle_detected
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['8', '2', 'degrees']
+channel free
+3
+playing 8
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['2', 'degrees']
+channel free
+2
+playing 2
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['degrees']
+channel free
+1
+playing degrees
+in loop
+channel busy
+in loop
+channel busy
 in loop
+channel busy
+in loop
 audio_queue.txt
 []
 channel free
@@ -541,6 +1707,32 @@ audio_queue.txt
 []
 channel free
 0
+in loop
+audio_queue.txt
+['valve_correct']
+channel free
+1
+playing valve_correct
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
 in loop
 audio_queue.txt
 []
@@ -595,6 +1787,8 @@ playing D
 in loop
 channel busy
 in loop
+channel busy
+in loop
 audio_queue.txt
 ['device', 'shuttlecock']
 channel free
@@ -606,9 +1800,9 @@ in loop
 channel busy
 in loop
 audio_queue.txt
-['shuttlecock']
+['shuttlecock', 'shuttlecock_correct']
 channel free
-1
+2
 playing shuttlecock
 in loop
 channel busy
@@ -622,25 +1816,935 @@ in loop
 channel busy
 in loop
 audio_queue.txt
-[]
+['shuttlecock_correct']
 channel free
-0
+1
+playing shuttlecock_correct
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
 in loop
 audio_queue.txt
-[]
+['station', 'E', 'device', 'small']
 channel free
-0
+4
+playing station
+in loop
+channel busy
+in loop
+channel busy
 in loop
 audio_queue.txt
-[]
+['E', 'device', 'small']
 channel free
-0
+3
+playing E
+in loop
+channel busy
 in loop
 audio_queue.txt
-['horizontal', 'close']
+['device', 'small']
 channel free
 2
+playing device
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['small', 'horizontal', 'angle_target', '0', 'degrees', 'angle_detected', '2', '4', '8', 'degrees']
+channel free
+10
+playing small
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['horizontal', 'angle_target', '0', 'degrees', 'angle_detected', '2', '4', '8', 'degrees']
+channel free
+9
 playing horizontal
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['angle_target', '0', 'degrees', 'angle_detected', '2', '4', '8', 'degrees']
+channel free
+8
+playing angle_target
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['0', 'degrees', 'angle_detected', '2', '4', '8', 'degrees']
+channel free
+7
+playing 0
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['degrees', 'angle_detected', '2', '4', '8', 'degrees']
+channel free
+6
+playing degrees
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['angle_detected', '2', '4', '8', 'degrees']
+channel free
+5
+playing angle_detected
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['2', '4', '8', 'degrees']
+channel free
+4
+playing 2
+in loop
+channel busy
+in loop
+audio_queue.txt
+['4', '8', 'degrees']
+channel free
+3
+playing 4
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['8', 'degrees']
+channel free
+2
+playing 8
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['degrees']
+channel free
+1
+playing degrees
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+['valve_correct']
+channel free
+1
+playing valve_correct
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+['station', 'F', 'device', 'shuttlecock']
+channel free
+4
+playing station
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['F', 'device', 'shuttlecock']
+channel free
+3
+playing F
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['device', 'shuttlecock']
+channel free
+2
+playing device
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['shuttlecock', 'vertical', 'close']
+channel free
+3
+playing shuttlecock
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+audio_queue.txt
+['vertical', 'close']
+channel free
+2
+playing vertical
+in loop
+channel busy
 in loop
 channel busy
 in loop
@@ -662,6 +2766,223 @@ channel busy
 in loop
 channel busy
 in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+['terminate1']
+channel free
+1
+playing terminate1
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
+channel busy
+in loop
 channel busy
 in loop
 audio_queue.txt
@@ -1424,4 +3745,6457 @@ audio_queue.txt
 channel free
 0
 in loop
-audio_q
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0
+in loop
+audio_queue.txt
+[]
+channel free
+0

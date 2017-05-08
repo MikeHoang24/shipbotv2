@@ -114,7 +114,7 @@ class audioControl():
         if duration == "long":
             self.playMusic("moveturn_long")
         elif duration == "short":
-            self.playMusoc("moveturn_short")
+            self.playMusic("moveturn_short")
         
 #    def old_play(self,fname):
 #        

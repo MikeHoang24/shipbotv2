@@ -189,7 +189,8 @@ for mission in missions:
             target_angle = int(mission[2])
             audioControl.play_valve_target(target_angle)
             while (((abs(rotate_calc(target_angle, cv_green)) > max_angle_diff) and count <= max_feedback) or (count == 0)):
-                if count != 0:
+                print(abs(rotate_calc(target_angle, cv_green)))
+		if count != 0:
                     audioControl.play_valve_wrong()
                 audioControl.play_valve_detected(cv_green)
                 rotate = target_angle - cv_green
