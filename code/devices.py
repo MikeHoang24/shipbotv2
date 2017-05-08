@@ -5,7 +5,7 @@ Created on Tue Apr 25 19:08:43 2017
 @author: Michu
 """
 
-hebi2_zero = -43
+hebi2_zero = 45
 
 class Device:
     def __init__(self, name):
@@ -86,8 +86,8 @@ class Shuttle(Device): #0 = open, 1 = closed
         if ori == "V":
             #self.y0 = 145
             #self.y1 = 145
-            self.y0 = 135
-            self.y1 = 135
+            self.y0 = 130
+            self.y1 = 130
             self.z0 = 7
             self.z1 = 7
             self.hebi0o = 0
@@ -100,7 +100,7 @@ class Shuttle(Device): #0 = open, 1 = closed
             self.y0 = 91
             self.y1 = 91
             self.z0 = 340
-            self.z1 = 305
+            self.z1 = 300
             self.hebi0o = -90
             self.hebi1o = 0
             self.hebi2o = hebi2_zero + 90

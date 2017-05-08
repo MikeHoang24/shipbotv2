@@ -12,3 +12,20 @@ User-created group objects:
 Looking up group by name.
 Found group with 3 modules.
 Initializd
+Received command fom text: 0  0  0
+Command sent to arm: 0 0 0
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+Received command fom text: 0  -18  333
+Command sent to arm: 0 -18 333
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+Received command fom text: 0  -43  268
+Command sent to arm: 0 -43 268
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+Received command fom text: 0  1  223
+Command sent to arm: 0 1 223
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+arm terminated
