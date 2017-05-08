@@ -92,7 +92,7 @@ def rotate_calc(target, current):
     v1 = target - current
     if v1 > 180:
         return v1-360
-    elif v1 < 180:
+    elif v1 < -180:
         return v1+360
     else:
         return v1
