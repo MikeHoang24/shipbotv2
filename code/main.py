@@ -20,8 +20,8 @@ stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
 debug = False #set to True when debugging code
 hand_input = False #set to True to turn computer vision off
-audio_on = False
-cv_dict = ["V1","V2","A","B"]
+audio_on = True
+cv_dict = ["V1","V2","V3","A","B"]
 
 if not hand_input:
     import CVController as cvcontrol
@@ -34,9 +34,9 @@ max_L = 153
 max_L2 = max_L + 35
 init_station = "A"
 
-shuttle_rotate = 100 #rotation needed to turn shuttlecock valve by 90 degrees
-breaker_dist = 53 #distance between middle switch in breaker and side switch in mm
-breaker_a_middle = 15
+shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
+breaker_dist = 55 #distance between middle switch in breaker and side switch in mm
+breaker_a_middle = 19
 breaker_b_middle = -5
 max_offset = 153 #maximum reachable offset of the arm in mm
 E_offset = 70
@@ -60,6 +60,7 @@ st_h = station.Station("H", 0, stationG_y + station_dist, 0)
 
 #initialize axes (wait a second to give time for serial ports to open)
 time.sleep(2)
+audioControl.play_init()
 s.init_axes()
 
 #Rest positions
@@ -79,7 +80,7 @@ init_hebi2 = 0
 missions = parse.parse_mission("mission_file.txt")
 
 print("INITIAL POSITION:") #setting robot to rest position
-audioControl.play_init()
+
 s.set_y(init_y)
 s.set_z(init_z)
 s.set_hebiall(init_hebi0, init_hebi1, init_hebi2)
@@ -113,7 +114,7 @@ for mission in missions:
         audioControl.play_device(mission[1])
         if ((not hand_input) and (mission[1] in cv_dict)):
             (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1]) #Computer Vision
-            cv_ori = hand.get_ori(ord(s.c_s)-ord("A")) #comment out to use orientation
+            #cv_ori = hand.get_ori(ord(s.c_s)-ord("A")) #comment out to use orientation
             #cv_off = 0 #comment out to get offset
         else:
             cv_off = 0
@@ -218,6 +219,7 @@ for mission in missions:
         elif (mission[1] == "V3"):
             target = int(mission[2])
             audioControl.play_shuttlecock(target)
+	    audioControl.play_orientation(cv_ori)
             s.c_d = devices.Shuttle(cv_ori)
             if (cv_ori == "V"):
                 s.set_z(s.c_d.z0 + up)

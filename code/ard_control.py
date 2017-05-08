@@ -50,7 +50,7 @@ class Drive():
         while (timeout < self.receive_timeout):
             line = self.serial.readline()
             timeout += 1
-            print("drive: " + str(timeout))
+            #print("drive: " + str(timeout))
             if "DONE" in line:
                 return 1
         print("Drive timed out")
@@ -103,7 +103,7 @@ class Stepper():
         while (timeout < self.receive_timeout):
             line = self.serial.readline()
             timeout += 1
-            print("stepper:" + str(timeout))
+            #print("stepper:" + str(timeout))
             if len(line) > 0:
                 return 1
         print("Stepper timed out")
