@@ -44,7 +44,7 @@ F_offset = -87 #-88
 slip_big = 1.20
 slip_small = 1.25
 max_angle_diff = 30
-max_feedback = 0
+max_feedback = 2
 
 audioControl = audio.audioControl(audio_on)
 
