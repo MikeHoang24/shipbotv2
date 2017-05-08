@@ -65,7 +65,7 @@ class audioPlayer():
                         self.deleteFirstStream()
             else:
                 print("channel busy")
-            time.sleep(0.2)
+            time.sleep(0.25)
             
 playa = audioPlayer()
 playa.flush()

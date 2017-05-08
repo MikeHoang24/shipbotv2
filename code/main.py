@@ -18,8 +18,8 @@ import time
 drive_port = "/dev/ttyACM1"
 stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
-debug = True #set to True when debugging code
-hand_input = True #set to True to turn computer vision off
+debug = False #set to True when debugging code
+hand_input = False #set to True to turn computer vision off
 audio_on = True
 cv_dict = ["V1","V2","V3","A","B"]
 
@@ -40,11 +40,11 @@ breaker_a_middle = 19
 breaker_b_middle = -5
 max_offset = 153 #maximum reachable offset of the arm in mm
 E_offset = 70
-F_offset = -100 #-88
+F_offset = -87 #-88
 slip_big = 1.20
 slip_small = 1.25
 max_angle_diff = 30
-max_feedback = 2
+max_feedback = 0
 
 audioControl = audio.audioControl(audio_on)
 

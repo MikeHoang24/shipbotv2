@@ -1,8 +1,8 @@
 A V
 B V
 C V
-D V
-E V
+D H
+E H
 F V
-G H
-H H
+G V
+H V

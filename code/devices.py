@@ -86,8 +86,8 @@ class Shuttle(Device): #0 = open, 1 = closed
         if ori == "V":
             #self.y0 = 145
             #self.y1 = 145
-            self.y0 = 130
-            self.y1 = 130
+            self.y0 = 125
+            self.y1 = 125
             self.z0 = 7
             self.z1 = 7
             self.hebi0o = 0
