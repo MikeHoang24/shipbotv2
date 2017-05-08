@@ -41,8 +41,8 @@ breaker_b_middle = -5
 max_offset = 153 #maximum reachable offset of the arm in mm
 E_offset = 70
 F_offset = -87 #-88
-slip_big = 1.20
-slip_small = 1.25
+slip_big = 1.10
+slip_small = 1.15
 max_angle_diff = 30
 max_feedback = 2
 
