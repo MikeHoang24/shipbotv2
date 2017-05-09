@@ -1,41 +1,14 @@
-05/09/2017 15:49:16 [0 sec] >>> Initializing robot...
-05/09/2017 15:49:16 [0 sec] >>> All subsystems are ready.
-05/09/2017 15:49:19 [0 sec] >>> File received and mission started.
+05/09/2017 18:37:38 [0 sec] >>> Initializing robot...
+05/09/2017 18:37:44 [0 sec] >>> All subsystems are ready.
+05/09/2017 18:37:49 [0 sec] >>> File received and mission started.
 
-05/09/2017 15:49:19 [0 sec] >>> Manipulating breaker 'A' at station A
-05/09/2017 15:49:19 [0 sec] >>> Flipping switch B2
+05/09/2017 18:37:49 [0 sec] >>> Manipulating breaker 'B' at station E
+05/09/2017 18:37:49 [0 sec] >>> Computer vision initiated...
+05/09/2017 18:37:51 [2 sec] >>> Flipping switch B2
 
-05/09/2017 15:49:19 [0 sec] >>> Manipulating breaker 'A' at station A
-05/09/2017 15:49:19 [0 sec] >>> Flipping switch B3
+05/09/2017 18:38:14 [25 sec] >>> Robot moving to station F
+05/09/2017 18:38:14 [25 sec] >>> Manipulating breaker 'A' at station F
+05/09/2017 18:38:14 [25 sec] >>> Computer vision initiated...
+05/09/2017 18:38:16 [27 sec] >>> Flipping switch B2
 
-05/09/2017 15:49:19 [0 sec] >>> Manipulating breaker 'A' at station A
-05/09/2017 15:49:19 [0 sec] >>> Flipping switch B1
-
-05/09/2017 15:49:20 [1 sec] >>> Robot moving to station B
-05/09/2017 15:49:20 [1 sec] >>> Manipulating blue valve at station B
-05/09/2017 15:49:20 [1 sec] >>> Rotating valve from 0 to 180 degrees
-05/09/2017 15:49:21 [2 sec] >>> Valve angle is now within allowable region
-
-05/09/2017 15:49:22 [3 sec] >>> Robot moving to station C
-05/09/2017 15:49:22 [3 sec] >>> Manipulating shuttlecock valve at station C
-05/09/2017 15:49:22 [3 sec] >>> Closing vertical shuttlecock valve
-
-05/09/2017 15:49:24 [5 sec] >>> Robot moving to station D
-05/09/2017 15:49:24 [5 sec] >>> Manipulating blue valve at station D
-05/09/2017 15:49:24 [5 sec] >>> Rotating valve from 0 to 270 degrees
-05/09/2017 15:49:25 [6 sec] >>> Valve angle is now within allowable region
-
-05/09/2017 15:49:26 [7 sec] >>> Robot moving to station E
-05/09/2017 15:49:26 [7 sec] >>> Manipulating shuttlecock valve at station E
-05/09/2017 15:49:26 [7 sec] >>> Shuttlecock valve is already in desired position
-
-05/09/2017 15:49:27 [8 sec] >>> Robot moving to station F
-05/09/2017 15:49:27 [8 sec] >>> Manipulating orange valve at station F
-05/09/2017 15:49:27 [8 sec] >>> Rotating valve from 0 to 90 degrees
-05/09/2017 15:49:28 [9 sec] >>> Valve angle is now within allowable region
-
-05/09/2017 15:49:29 [10 sec] >>> Robot moving to station G
-05/09/2017 15:49:29 [10 sec] >>> Manipulating breaker 'B' at station G
-05/09/2017 15:49:29 [10 sec] >>> Flipping switch B2
-
-Mission accomplished in [10 sec]
+Mission accomplished in [40 sec]

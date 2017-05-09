@@ -18,9 +18,9 @@ import time
 drive_port = "/dev/ttyACM1"
 stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
-debug = True #set to True when debugging code
-hand_input = True #set to True to turn computer vision off
-audio_on = False
+debug = False #set to True when debugging code
+hand_input = False #set to True to turn computer vision off
+audio_on = True
 cv_dict = ["V1","V2","V3","A","B"]
 
 if not hand_input:
@@ -32,7 +32,7 @@ stationG_y = 229 #distance robot needs to move from station F to station G
 station_dist = 303 #distance robot needs to move from station to a neighboring one
 max_L = 153
 max_L2 = max_L + 35
-init_station = "A"
+init_station = "E"
 
 shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
 breaker_dist = 55 #distance between middle switch in breaker and side switch in mm
@@ -154,9 +154,11 @@ for mission in missions:
             cv_green = hand.get_angle(ord(s.c_s)-ord("A"))
             cv_ori = hand.get_ori(ord(s.c_s)-ord("A"))
         if (s.c_s == "E"):
-            cv_off = E_offset
+            #cv_off = E_offset
+	    print("at station E")
         elif (s.c_s == "F"):
-            cv_off = F_offset
+            #cv_off = F_offset
+	    print("at station F")
         else:
             if cv_off < -max_L:
                 s.move_l(cv_off)
