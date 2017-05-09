@@ -36,8 +36,8 @@ init_station = "A"
 
 shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
 breaker_dist = 55 #distance between middle switch in breaker and side switch in mm
-breaker_a_middle = 19
-breaker_b_middle = -5
+breaker_a_middle = 0#19
+breaker_b_middle = 0#-5
 max_offset = 153 #maximum reachable offset of the arm in mm
 E_offset = 70
 F_offset = -87 #-88

@@ -149,13 +149,13 @@ class Shuttlecock:
 
 class BreakerBox:
     # HSB Color Range (Valve)
-    hsb_low = [0, 80, 140]
+    hsb_low = [0, 80, 120]
     hsb_high = [40, 255, 255]
 
     orient = ORIENT_SIDE
     theta = 0
 
-    area_min = 800
+    area_min = 700
     area_max = 2000
     ratio_max = 1
 
@@ -195,6 +195,7 @@ class BreakerBox:
             x, y, w, h = cv2.boundingRect(cnt)
             area = cv2.contourArea(cnt)
             ratio = w / h
+	    #area = w*h
             ret = self.inRange(area, ratio)
             if (ret):
                 #                    box = cv2.boxPoints(rect)
@@ -219,7 +220,7 @@ class ValveSmall:
     mark_high = [70, 255, 255]
 
     # HSV Color Range (Valve)
-    blue_low = [100, 100, 90]
+    blue_low = [100, 100, 85]
     blue_high = [135, 255, 255]
 
     area_min = 2000
@@ -244,7 +245,7 @@ class ValveSmall:
             return (False, None)
     
         print("ratio was: " + str(ratio))
-        if (ratio < .75):
+        if (ratio < .70):
             return (True, ORIENT_UP)
         else:
             return (True, ORIENT_SIDE)
