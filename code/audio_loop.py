@@ -29,14 +29,14 @@ class audioPlayer():
     def readInfo(self):
         with open(self.fname, 'r') as f:
             contents = f.readlines()
-        print self.fname
+        #print self.fname
         contents = [x.strip() for x in contents]
         res = []
         for content in contents:
             content.split()
             temp = content.split()
             res += temp
-        print res
+        #print res
         return res
     
     def deleteFirstStream(self):
@@ -47,24 +47,23 @@ class audioPlayer():
         
     def flush(self):
         mix.init()
-        print("in flush")
+        #print("in flush")
         while True:
-            print("in loop")
+            #print("in loop")
             if not mix.Channel(self.info).get_busy():
                 data = self.readInfo()
-                print("channel free")
-                print len(data)
+                #print("channel free")
+                #print len(data)
                 if (len(data) > 0):
                     if data[0] == 'STOP':
-                        print("stopping")
+                        #print("stopping")
                         self.deleteFirstStream()
                         break
                     else:
-                        print("playing " + data[0])
+                        #print("playing " + data[0])
                         self.playInfo(data[0])
                         self.deleteFirstStream()
-            else:
-                print("channel busy")
+            #print("channel busy")
             time.sleep(0.25)
             
 playa = audioPlayer()

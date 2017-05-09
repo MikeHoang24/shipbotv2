@@ -5,9 +5,8 @@ Created on Thu May 04 13:57:02 2017
 @author: Michu
 """
 from pygame import mixer as mix
-import time
 
-CHUNK = 1024
+#CHUNK = 1024
 
 class audioControl():
     def __init__(self, audio_on):
@@ -45,6 +44,9 @@ class audioControl():
                 
     def play_init(self):
         self.queueInfo("initialize")
+        
+    def play_ready(self):
+        self.queueInfo("ready1")
         
     def play_terminate(self):
         self.queueInfo("terminate1")
@@ -115,6 +117,9 @@ class audioControl():
             self.playMusic("moveturn_long")
         elif duration == "short":
             self.playMusic("moveturn_short")
+            
+    def dance(self):
+        self.playMusic("boo")
         
 #    def old_play(self,fname):
 #        

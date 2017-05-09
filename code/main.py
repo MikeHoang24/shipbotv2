@@ -11,16 +11,16 @@ import parse
 import state
 import offset
 import audio
-
+import log
 import hand
 import time
 
 drive_port = "/dev/ttyACM1"
 stepper_port = "/dev/ttyACM0"
 hebi_fname = "hebi_info.txt"
-debug = False #set to True when debugging code
-hand_input = False #set to True to turn computer vision off
-audio_on = True
+debug = True #set to True when debugging code
+hand_input = True #set to True to turn computer vision off
+audio_on = False
 cv_dict = ["V1","V2","V3","A","B"]
 
 if not hand_input:
@@ -36,8 +36,12 @@ init_station = "A"
 
 shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
 breaker_dist = 55 #distance between middle switch in breaker and side switch in mm
-breaker_a_middle = 0#19
-breaker_b_middle = 0#-5
+if hand_input:
+    breaker_a_middle = 19
+    breaker_b_middle = -5
+else:
+    breaker_a_middle = 0
+    breaker_b_middle = 0
 max_offset = 153 #maximum reachable offset of the arm in mm
 E_offset = 70
 F_offset = -87 #-88
@@ -61,6 +65,8 @@ st_h = station.Station("H", 0, stationG_y + station_dist, 0)
 
 #initialize axes (wait a second to give time for serial ports to open)
 time.sleep(2)
+log = log.log()
+log.write('Initializing robot...')
 audioControl.play_init()
 s.init_axes()
 
@@ -86,7 +92,14 @@ s.set_y(init_y)
 s.set_z(init_z)
 s.set_hebiall(init_hebi0, init_hebi1, init_hebi2)
 
+log.starttime()
+log.write('All subsystems are ready.')
+audioControl.play_ready()
+
 raw_input("Press ENTER to start mission...")
+log.starttime()
+log.write('File received and mission started.')
+log.newline()
 
 def rotate_calc(target, current):
     v1 = target - current
@@ -125,11 +138,14 @@ for mission in missions:
             s.move_r(station_dist)
             s.move_f()
         time.sleep(1)
+        log.write('Robot moving to station ' + chr((ord(s.c_s)+1)))
         s.set_station(chr((ord(s.c_s)+1)))
     else:
         audioControl.play_station(mission[0])
         audioControl.play_device(mission[1])
+        log.manipulation(mission[0], mission[1])
         if ((not hand_input) and (mission[1] in cv_dict)):
+            log.write('Computer vision initiated...')
             (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1]) #Computer Vision
             #cv_ori = hand.get_ori(ord(s.c_s)-ord("A")) #comment out to use orientation
             #cv_off = 0 #comment out to get offset
@@ -158,7 +174,10 @@ for mission in missions:
             audioControl.play_valve_target(target_angle)
             while (((abs(rotate_calc(target_angle, cv_green)) > max_angle_diff) and count <= max_feedback) or (count == 0)):
                 if count != 0:
+                    log.write('Readjusting valve from ' + str(cv_green) + ' to ' + str(target_angle) + ' degrees')
                     audioControl.play_valve_wrong()
+                else:
+                    log.write('Rotating valve from ' + str(cv_green) + ' to ' + str(target_angle) + ' degrees')
                 audioControl.play_valve_detected(cv_green)
                 rotate = rotate_calc(target_angle, cv_green)
                 s.c_d = devices.Small(cv_ori)
@@ -179,9 +198,11 @@ for mission in missions:
                 s.set_z(rest_z)
                 s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
                 count += 1
+                log.write('Computer vision initiated...')
                 (dc1, cv_green, dc2) = cvc.processCommand(mission[1])
             audioControl.play_valve_correct()
             music_on = False
+            log.write('Valve angle is now within allowable region')
         
         #BIG VALVE
         elif (mission[1] == "V2"): 
@@ -189,9 +210,11 @@ for mission in missions:
             target_angle = int(mission[2])
             audioControl.play_valve_target(target_angle)
             while (((abs(rotate_calc(target_angle, cv_green)) > max_angle_diff) and count <= max_feedback) or (count == 0)):
-                print(abs(rotate_calc(target_angle, cv_green)))
-		if count != 0:
+                if count != 0:
+                    log.write('Readjusting valve from ' + str(cv_green) + ' to ' + str(target_angle) + ' degrees')
                     audioControl.play_valve_wrong()
+                else:
+                    log.write('Rotating valve from ' + str(cv_green) + ' to ' + str(target_angle) + ' degrees')
                 audioControl.play_valve_detected(cv_green)
                 rotate = target_angle - cv_green
                 s.c_d = devices.Big()
@@ -205,10 +228,12 @@ for mission in missions:
                 s.set_z(rest_z)
                 s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
                 first_rotate = True
+                log.write('Computer vision initiated...')
                 (dc1, cv_green, dc2) = cvc.processCommand(mission[1])
                 count += 1
             audioControl.play_valve_correct()
             music_on = False
+            log.write('Valve angle is now within allowable region')
             
         #BREAKERS
         elif (mission[1] == "A" or mission[1] == "B"):
@@ -228,6 +253,7 @@ for mission in missions:
                 assert(target == "B2")
                 (up, theta1, theta2) = offset.offset_breakers(cv_off+breaker_middle, max_L, max_L2)
                 theta2 += 90
+            log.write('Flipping switch ' + target)
             y_in = s.c_d.y0
             if abs(cv_off) > 59: #sag compensation
                 y_in -= abs(cv_off)/20
@@ -242,6 +268,7 @@ for mission in missions:
             target = int(mission[2])
             if (((target == 0) and (cv_green == 0)) or ((target == 1) and (cv_green == 1))):
                 audioControl.play_shuttlecock(2)
+                log.write('Shuttlecock valve is already in desired position')
                 music_on = False
             else:
                 audioControl.play_orientation(cv_ori)
@@ -250,10 +277,12 @@ for mission in missions:
                 if (cv_ori == "V"):
                     s.set_z(s.c_d.z0 + up)
                     if (target == 0):
+                        log.write('Opening vertical shuttlecock valve')
                         s.set_hebiall(s.c_d.hebi0c, s.c_d.hebi1c + theta1, s.c_d.hebi2c + theta2)
                         s.set_y(s.c_d.y0)
                         s.rotate_hebi2(-shuttle_rotate)
                     elif (target == 1):
+                        log.write('Closing vertical shuttlecock valve')
                         s.set_hebiall(s.c_d.hebi0o, s.c_d.hebi1o + theta1, s.c_d.hebi2o + theta2)
                         s.set_y(s.c_d.y0)
                         s.rotate_hebi2(shuttle_rotate)
@@ -262,12 +291,14 @@ for mission in missions:
                 elif (cv_ori == "H"):
                     s.set_z(s.c_d.z0)
                     if (target == 0):
+                        log.write('Opening horizontal shuttlecock valve')
                         s.set_hebiall(s.c_d.hebi0c, s.c_d.hebi1c + theta1, s.c_d.hebi2c + theta2)
                         s.set_y(s.c_d.y0-up)
                         s.set_z(s.c_d.z1)
                         s.rotate_hebi2(-shuttle_rotate)
                         s.set_z(s.c_d.z0)
                     elif (target == 1):
+                        log.write('Closing horizontal shuttlecock valve')
                         s.set_hebiall(s.c_d.hebi0o, s.c_d.hebi1o + theta1, s.c_d.hebi2o + theta2)
                         s.set_y(s.c_d.y0-up)
                         s.set_z(s.c_d.z1)
@@ -283,10 +314,12 @@ for mission in missions:
         if (s.c_d.name == "Small" or s.c_d.name == "Big"):
             print("From angle: " + str(cv_green) + " to " + mission[2] + ". Rotate by: " + str(rotate))
         print("REST POSITION:")
+        log.newline()
         s.set_y(rest_y)
         s.set_z(rest_z)
         s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
-        
+
+log.terminate()
 time.sleep(1)
 audioControl.play_terminate()
 if not debug:
