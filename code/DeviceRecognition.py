@@ -13,6 +13,7 @@ ROBOTAXIS = 600
 
 # Detects a shuttlecock device (front-facing only!)
 
+
 class Shuttlecock:
     # HSV Color Range (Valve)
     blue_low = [100, 100, 100]
@@ -25,7 +26,7 @@ class Shuttlecock:
     # Valve Size Range
     area_min = 1000
     area_max = 10000
-    
+
     orient = ORIENT_SIDE
 
     # Initialize numpy color arrays
@@ -40,7 +41,7 @@ class Shuttlecock:
 
     def calculateAngle(self, ratio):
         if (self.orient == ORIENT_SIDE):
-            if ratio > 2 :
+            if ratio > 2:
                 return 0
             else:
                 return 1
@@ -50,14 +51,14 @@ class Shuttlecock:
             else:
                 return 0
 
-    def getPipeAngle(self,hsv_image,image):
+    def getPipeAngle(self, hsv_image, image):
         pipe_area = 0
-        
+
         maskroi = np.zeros((1200, 1600), np.uint8)
         myROI = [(900, 200), (900, 1000), (1600, 1000), (1600, 200)]
         cv2.fillPoly(maskroi, [np.array(myROI)], 255)
         hsv_image = cv2.bitwise_and(hsv_image, hsv_image, mask=maskroi)
-        
+
         mask = cv2.inRange(hsv_image, self.pipe_low, self.pipe_high)
         output = cv2.bitwise_and(hsv_image, hsv_image, mask=mask)
         output_gray = cv2.cvtColor(output, cv2.COLOR_BGR2GRAY)
@@ -68,11 +69,11 @@ class Shuttlecock:
 #            thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         for cnt in contours:
             area = cv2.contourArea(cnt)
-            if (area>2000):	
-		print(area)
-                x,y,w,h = cv2.boundingRect(cnt)
+            if (area > 2000):
+                print(area)
+                x, y, w, h = cv2.boundingRect(cnt)
                 pipe_area = pipe_area + area
-        
+
         print(pipe_area)
         if pipe_area > 28000:
             self.orient = ORIENT_SIDE
@@ -80,9 +81,8 @@ class Shuttlecock:
         elif pipe_area > 18000:
             self.orient = ORIENT_UP
             return True
-        else: 
+        else:
             return False
-
 
     # Recieves a path to an image, returns ( offset, orientation, angle )
     def processImage(self, path):
@@ -96,7 +96,7 @@ class Shuttlecock:
         myROI = [(900, 200), (900, 1000), (1600, 1000), (1600, 200)]
         cv2.fillPoly(maskroi, [np.array(myROI)], 255)
         hsv_image = cv2.bitwise_and(hsv_image, hsv_image, mask=maskroi)
-        
+
         # mask it for the desired color as a binary
         mask = cv2.inRange(hsv_image, self.thresh_low, self.thresh_high)
         output = cv2.bitwise_and(hsv_image, hsv_image, mask=mask)
@@ -118,15 +118,15 @@ class Shuttlecock:
             if (not self.checkArea(area)):
                 # not the right size for us
                 continue
-            x,y,w,h = cv2.boundingRect(cnt)
-            x = x+w/2
-            y = y+h/2
+            x, y, w, h = cv2.boundingRect(cnt)
+            x = x + w / 2
+            y = y + h / 2
 #            print(area)
 #            area = dim[0] * dim[1]
-            ratio = w/h
+            ratio = w / h
 #            print(ratio)
             print(y)
-            
+
             if (not self.getPipeAngle(hsv_image, image)):
                 print("pipe not found")
                 continue
@@ -142,14 +142,15 @@ class Shuttlecock:
                         offset = ROBOTAXIS - (y - 130)
                     else:
                         offset = ROBOTAXIS - y
-                        
-                offset = offset*DISTANCE_SCALE
+
+                offset = offset * DISTANCE_SCALE
             return (int(offset), int(angle), self.orient)
         return False
 
+
 class BreakerBox:
     # HSB Color Range (Valve)
-    hsb_low = [0, 80, 120]
+    hsb_low = [0, 80, 100]
     hsb_high = [40, 255, 255]
 
     orient = ORIENT_SIDE
@@ -163,11 +164,11 @@ class BreakerBox:
         self.np_low = np.array(self.hsb_low, dtype="uint8")
         self.np_high = np.array(self.hsb_high, dtype="uint8")
 
-    def inRange(self, area, ratio):
-        if (area < self.area_min or area > self.area_max or ratio > self.ratio_max):
-            return False
-        else:
-            return True
+#    def inRange(self, area, ratio):
+#        if (area < self.area_min or area > self.area_max or ratio > self.ratio_max):
+#            return False
+#        else:
+#            return True
 
     def processImage(self, path):
         # load the image
@@ -176,7 +177,7 @@ class BreakerBox:
 
         # masking non center area
         maskroi = np.zeros((1200, 1600), np.uint8)
-        myROI = [(600, 200), (600, 1100), (1400, 1100), (1400, 200)]
+        myROI = [(600, 200), (600, 1000), (1400, 1000), (1400, 200)]
         cv2.fillPoly(maskroi, [np.array(myROI)], 255)
         hsv_image = cv2.bitwise_and(hsv_image, hsv_image, mask=maskroi)
 
@@ -184,25 +185,32 @@ class BreakerBox:
         mask = cv2.inRange(hsv_image, self.np_low, self.np_high)
         output = cv2.bitwise_and(hsv_image, hsv_image, mask=mask)
         output_gray = cv2.cvtColor(output, cv2.COLOR_BGR2GRAY)
-        ret, thresh = cv2.threshold(output_gray, 15, 255, cv2.THRESH_BINARY)
+        ret, thresh = cv2.threshold(output_gray, 10, 255, cv2.THRESH_BINARY)
+        kernel = np.ones((5, 5), np.uint8)
+        closed_thresh = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
 
         # find the contours
         img, contours, hierarchy = cv2.findContours(
-            thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            closed_thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         #contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 
         for cnt in contours:
             x, y, w, h = cv2.boundingRect(cnt)
             area = cv2.contourArea(cnt)
             ratio = w / h
-	    #area = w*h
-            ret = self.inRange(area, ratio)
-            if (ret):
+            # print(area)
+            #area = w*h
+            if (area > 600 and h > 50 and w < 40):
                 #                    box = cv2.boxPoints(rect)
                 #                    box = np.int0(box)
                     #x_offset = ROBOTAXIS - center[1]
-                x = x+w/2
-                y = y+h/2
+                #                print(h)
+                #                print(w)
+                #                print(area)
+                cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 255), 2)
+                x = x + w / 2
+                y = y + h / 2
+#                print(y)
                 x_offset = ROBOTAXIS - y
                 x_offset = x_offset * DISTANCE_SCALE
                 print("Detected Breaker!")
@@ -210,6 +218,7 @@ class BreakerBox:
                 # cv2.imshow("image", image)
                 # cv2.waitKey(0)
                 # cv2.destroyAllWindows()
+
                 return (int(x_offset), int(self.theta), self.orient)
         return False
 
@@ -243,13 +252,12 @@ class ValveSmall:
     def inRange(self, area, ratio):
         if (area < self.area_min):
             return (False, None)
-    
+
         print("ratio was: " + str(ratio))
         if (ratio < .70):
             return (True, ORIENT_UP)
         else:
             return (True, ORIENT_SIDE)
-
 
     def findMarker(self, image, hsv_image):
         maskroi = np.zeros((1200, 1600), np.uint8)
@@ -293,7 +301,7 @@ class ValveSmall:
         myROI = [(700, 200), (700, 1000), (1600, 1000), (1600, 200)]
         cv2.fillPoly(maskroi, [np.array(myROI)], 255)
         hsv_image = cv2.bitwise_and(hsv_image, hsv_image, mask=maskroi)
-        
+
         # mask it for the desired color as a binary
         mask = cv2.inRange(hsv_image, self.np_low, self.np_high)
         output = cv2.bitwise_and(hsv_image, hsv_image, mask=mask)
@@ -306,16 +314,16 @@ class ValveSmall:
 #        contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 
         for cnt in contours:
-            x,y,w,h = cv2.boundingRect(cnt)
-            x = x+w/2
-            y = y+h/2
-            center = [x,y]
+            x, y, w, h = cv2.boundingRect(cnt)
+            x = x + w / 2
+            y = y + h / 2
+            center = [x, y]
             if (w > 0 and h > 0):
                 area = cv2.contourArea(cnt)
-                ratio = w/h
+                ratio = w / h
                 ret, orient = self.inRange(area, ratio)
                 if (ret):
-                    #print(area)
+                    # print(area)
                     x_offset = ROBOTAXIS - center[1]
                     x_offset = x_offset * DISTANCE_SCALE
                     # cv2.drawContours(image,[box],0,(0,0,255),3)
@@ -415,7 +423,7 @@ class ValveLarge:
         for cnt in contours:
             area = cv2.contourArea(cnt)
             if (area > 100):
-		print(area)
+                print(area)
                 rect = cv2.minAreaRect(cnt)
                 box = cv2.boxPoints(rect)
                 box = np.int0(box)
@@ -444,8 +452,8 @@ class ValveLarge:
         #maskroi = np.zeros((1200, 1600), np.uint8)
         #myROI = [(600, 200), (600, 1100), (1600, 1100), (1600, 200)]
         #cv2.fillPoly(maskroi, [np.array(myROI)], 255)
-        #hsv_image = cv2.bitwise_and(hsv_image, hsv_image, mask=maskroi)        
-        
+        #hsv_image = cv2.bitwise_and(hsv_image, hsv_image, mask=maskroi)
+
         # Mask out for desired color
         mask = cv2.inRange(hsv_image, self.thresh_low, self.thresh_high)
         output = cv2.bitwise_and(hsv_image, hsv_image, mask=mask)
