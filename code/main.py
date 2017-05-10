@@ -120,7 +120,7 @@ for mission in missions:
         s.set_y(rest_y)
         s.set_z(rest_z)
         s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
-    log.write('Robot moving to station ' + chr((ord(s.c_s)+1)))
+        log.write('Robot moving to station ' + chr((ord(s.c_s)+1)))
         if (s.c_s == "D"):
             if music_on:
                 audioControl.play_move()
@@ -160,22 +160,20 @@ for mission in missions:
             cv_off = E_offset
             breaker_a_middle = b_a_m
             breaker_b_middle = b_b_m
-        print("at station E")
         elif ((s.c_s == "F") and corner_adjust):
             cv_off = F_offset
             breaker_a_middle = b_a_m
             breaker_b_middle = b_b_m
-        print("at station F")
         else:
-        if not hand_input:
-            breaker_a_middle = 0
-            breaker_b_middle = 0
-        if cv_off < -max_L:
-            s.move_l(cv_off)
-            (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1])
-        elif cv_off > max_L:
-            s.move_r(cv_off)
-            (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1])
+            if not hand_input:
+                breaker_a_middle = 0
+                breaker_b_middle = 0
+            if cv_off < -max_L:
+                s.move_l(cv_off)
+                (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1])
+            elif cv_off > max_L:
+                s.move_r(cv_off)
+                (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1])
         (up, theta1, theta2) = offset.offset_valves(cv_off, max_L)
         
         #SMALL VALVE
