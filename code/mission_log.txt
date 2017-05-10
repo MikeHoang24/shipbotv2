@@ -1,14 +1,14 @@
-05/09/2017 18:37:38 [0 sec] >>> Initializing robot...
-05/09/2017 18:37:44 [0 sec] >>> All subsystems are ready.
-05/09/2017 18:37:49 [0 sec] >>> File received and mission started.
+05/10/2017 11:30:00 [0 sec] >>> Initializing robot...
+05/10/2017 11:30:07 [0 sec] >>> All subsystems are ready.
+05/10/2017 11:30:08 [0 sec] >>> File received and mission started.
 
-05/09/2017 18:37:49 [0 sec] >>> Manipulating breaker 'B' at station E
-05/09/2017 18:37:49 [0 sec] >>> Computer vision initiated...
-05/09/2017 18:37:51 [2 sec] >>> Flipping switch B2
+05/10/2017 11:30:16 [8 sec] >>> Robot moving to station B
+05/10/2017 11:30:18 [10 sec] >>> Robot moving to station C
+05/10/2017 11:30:20 [12 sec] >>> Robot moving to station D
+05/10/2017 11:30:21 [13 sec] >>> Robot moving to station E
+05/10/2017 11:30:35 [26 sec] >>> Robot moving to station F
+05/10/2017 11:30:35 [26 sec] >>> Manipulating breaker 'B' at station F
+05/10/2017 11:30:35 [26 sec] >>> Computer vision initiated...
+05/10/2017 11:30:37 [28 sec] >>> Flipping switch B1
 
-05/09/2017 18:38:14 [25 sec] >>> Robot moving to station F
-05/09/2017 18:38:14 [25 sec] >>> Manipulating breaker 'A' at station F
-05/09/2017 18:38:14 [25 sec] >>> Computer vision initiated...
-05/09/2017 18:38:16 [27 sec] >>> Flipping switch B2
-
-Mission accomplished in [40 sec]
+Mission accomplished in [43 sec]

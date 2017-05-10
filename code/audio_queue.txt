@@ -1,0 +1,10 @@
+initialize
+ready1
+station
+F
+device
+breaker
+B
+switch
+B1
+terminate1

@@ -21,9 +21,9 @@ time.sleep(7)
 
 count = 0
 while count < 10:
-    #hebi.send(0, 0, 0)
+    hebi.send(0, 0, 0)
     time.sleep(1)
-    #hebi.send(-90, 0, 0)
+    hebi.send(-90, 0, 0)
     time.sleep(1)
     count += 1
     

@@ -1,11 +1,11 @@
 Broadcasting on:
   192.168.2.255
-  128.237.175.255
-  128.237.175.255
+  128.237.183.255
+  128.237.183.255
 Modules found on the network:
-    238045233854836:   d8:80:39:9a:b9:74   (192.168.2.3) Hand | TeamJ
-    238045233887184:   d8:80:39:9b:37:d0   (192.168.2.2) elbow | TeamJ
-    238045239271894:   d8:80:39:ed:61:d6   (192.168.2.4) Shoulder | TeamJ
+    238045233887184:   d8:80:39:9b:37:d0   (192.168.2.3) elbow | TeamJ
+    238045233854836:   d8:80:39:9a:b9:74   (192.168.2.4) Hand | TeamJ
+    238045239271894:   d8:80:39:ed:61:d6   (192.168.2.5) Shoulder | TeamJ
 User-created module objects:
 User-created group objects:
 
@@ -16,14 +16,18 @@ Received command fom text: 0  0  0
 Command sent to arm: 0 0 0
 Received command fom text: -90  0  0
 Command sent to arm: -90 0 0
-Received command fom text: 0  22  288
-Command sent to arm: 0 22 288
 Received command fom text: -90  0  0
 Command sent to arm: -90 0 0
 Received command fom text: -90  0  0
 Command sent to arm: -90 0 0
-Received command fom text: 0  -27  338
-Command sent to arm: 0 -27 338
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+Received command fom text: -90  0  0
+Command sent to arm: -90 0 0
+Received command fom text: 0  -55  41
+Command sent to arm: 0 -55 41
 Received command fom text: -90  0  0
 Command sent to arm: -90 0 0
 arm terminated

@@ -27,12 +27,6 @@ def offset_breakers(x_off, L, L2):
         theta2 = -theta1
         up = L-L*math.cos(theta1)
         return (up, theta1/math.pi*180.0, theta2/math.pi*180.0)
-    elif abs(x_off) <= L2:
-        theta1 = math.asin(float(x_off)/L2)
-        print(theta1)
-        up = L-L2*math.cos(theta1)-(L2-L-20)
-        print(up)
-        return (up, theta1/math.pi*180.0, -180)
     else:
         print("Offset too large, just extending to maximum")
         if x_off < 0:

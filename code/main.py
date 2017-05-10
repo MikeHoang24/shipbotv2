@@ -32,13 +32,15 @@ stationG_y = 229 #distance robot needs to move from station F to station G
 station_dist = 303 #distance robot needs to move from station to a neighboring one
 max_L = 153
 max_L2 = max_L + 35
-init_station = "E"
+init_station = "A"
 
 shuttle_rotate = 110 #rotation needed to turn shuttlecock valve by 90 degrees
 breaker_dist = 55 #distance between middle switch in breaker and side switch in mm
+b_a_m = 19
+b_b_m = -5
 if hand_input:
-    breaker_a_middle = 19
-    breaker_b_middle = -5
+    breaker_a_middle = b_a_m
+    breaker_b_middle = b_b_m
 else:
     breaker_a_middle = 0
     breaker_b_middle = 0
@@ -117,6 +119,7 @@ for mission in missions:
         s.set_y(rest_y)
         s.set_z(rest_z)
         s.set_hebiall(rest_hebi0, rest_hebi1, rest_hebi2)
+	log.write('Robot moving to station ' + chr((ord(s.c_s)+1)))
         if (s.c_s == "D"):
             if music_on:
                 audioControl.play_move()
@@ -138,7 +141,6 @@ for mission in missions:
             s.move_r(station_dist)
             s.move_f()
         time.sleep(1)
-        log.write('Robot moving to station ' + chr((ord(s.c_s)+1)))
         s.set_station(chr((ord(s.c_s)+1)))
     else:
         audioControl.play_station(mission[0])
@@ -154,12 +156,19 @@ for mission in missions:
             cv_green = hand.get_angle(ord(s.c_s)-ord("A"))
             cv_ori = hand.get_ori(ord(s.c_s)-ord("A"))
         if (s.c_s == "E"):
-            #cv_off = E_offset
+            cv_off = E_offset
+	    breaker_a_middle = b_a_m
+	    breaker_b_middle = b_b_m
 	    print("at station E")
         elif (s.c_s == "F"):
-            #cv_off = F_offset
+            cv_off = F_offset
+	    breaker_a_middle = b_a_m
+	    breaker_b_middle = b_b_m
 	    print("at station F")
         else:
+	    if not hand_input:
+		breaker_a_middle = b_a_m
+		breaker_b_middle = b_b_m
             if cv_off < -max_L:
                 s.move_l(cv_off)
                 (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1])
