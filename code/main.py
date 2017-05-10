@@ -167,8 +167,8 @@ for mission in missions:
 	    print("at station F")
         else:
 	    if not hand_input:
-		breaker_a_middle = b_a_m
-		breaker_b_middle = b_b_m
+		breaker_a_middle = 0
+		breaker_b_middle = 0
             if cv_off < -max_L:
                 s.move_l(cv_off)
                 (cv_off, cv_green, cv_ori) = cvc.processCommand(mission[1])
