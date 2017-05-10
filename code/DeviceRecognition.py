@@ -13,7 +13,6 @@ ROBOTAXIS = 600
 
 # Detects a shuttlecock device (front-facing only!)
 
-
 class Shuttlecock:
     # HSV Color Range (Valve)
     blue_low = [100, 100, 100]
@@ -26,7 +25,7 @@ class Shuttlecock:
     # Valve Size Range
     area_min = 1000
     area_max = 10000
-
+    
     orient = ORIENT_SIDE
 
     # Initialize numpy color arrays
@@ -41,7 +40,7 @@ class Shuttlecock:
 
     def calculateAngle(self, ratio):
         if (self.orient == ORIENT_SIDE):
-            if ratio > 2:
+            if ratio > 2 :
                 return 0
             else:
                 return 1
@@ -51,38 +50,71 @@ class Shuttlecock:
             else:
                 return 0
 
-    def getPipeAngle(self, hsv_image, image):
+    def getPipeAngle(self,hsv_image,image):
         pipe_area = 0
-
+        min_x = 1600
+        min_y = 1200
+        max_x = 0
+        max_y = 0
         maskroi = np.zeros((1200, 1600), np.uint8)
-        myROI = [(900, 200), (900, 1000), (1600, 1000), (1600, 200)]
+        myROI = [(800, 200), (800, 1000), (1600, 1000), (1600, 200)]
         cv2.fillPoly(maskroi, [np.array(myROI)], 255)
         hsv_image = cv2.bitwise_and(hsv_image, hsv_image, mask=maskroi)
-
+        
         mask = cv2.inRange(hsv_image, self.pipe_low, self.pipe_high)
         output = cv2.bitwise_and(hsv_image, hsv_image, mask=mask)
         output_gray = cv2.cvtColor(output, cv2.COLOR_BGR2GRAY)
         ret, thresh = cv2.threshold(output_gray, 15, 255, cv2.THRESH_BINARY)
-        img, contours, hierarchy = cv2.findContours(
-            thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        img, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 #        contours, hierarchy = cv2.findContours(
 #            thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         for cnt in contours:
             area = cv2.contourArea(cnt)
-            if (area > 2000):
-                print(area)
-                x, y, w, h = cv2.boundingRect(cnt)
+            if (area>2000):
+                x,y,w,h = cv2.boundingRect(cnt)
+                x = x+w/2
+                y = y+h/2
+                if x>max_x:
+                    max_x = x
+                if x<min_x:
+                    min_x = x
+                if y>max_y:
+                    max_y = y
+                if y<min_y:
+                    min_y = y
                 pipe_area = pipe_area + area
-
-        print(pipe_area)
-        if pipe_area > 28000:
-            self.orient = ORIENT_SIDE
-            return True
-        elif pipe_area > 18000:
-            self.orient = ORIENT_UP
-            return True
-        else:
+#                print("data")                
+#                print(max_x)
+#                print(max_y)
+#                print(min_x)
+#                print(min_y)
+        
+        dx = max_x-min_x
+        dy = max_y-min_y
+#        print(dx)
+#        print(dy)
+        
+#        print(pipe_area)
+        if pipe_area < 8000:
             return False
+        else:
+            if dx>dy:
+                self.orient = ORIENT_SIDE
+                return True
+            else:
+                self.orient = ORIENT_UP
+                return True
+                
+#        print(pipe_area)
+#        if pipe_area > 28000:
+#            self.orient = ORIENT_SIDE
+#            return True
+#        elif pipe_area > 18000:
+#            self.orient = ORIENT_UP
+#            return True
+#        else: 
+#            return False
+
 
     # Recieves a path to an image, returns ( offset, orientation, angle )
     def processImage(self, path):
@@ -91,9 +123,9 @@ class Shuttlecock:
         height, width, channels = image.shape
         img_center = (width / 2, height / 2)
         hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-
+        
         maskroi = np.zeros((1200, 1600), np.uint8)
-        myROI = [(900, 200), (900, 1000), (1600, 1000), (1600, 200)]
+        myROI = [(700, 200), (700, 1000), (1600, 1000), (1600, 200)]
         cv2.fillPoly(maskroi, [np.array(myROI)], 255)
         hsv_image = cv2.bitwise_and(hsv_image, hsv_image, mask=maskroi)
 
@@ -108,25 +140,21 @@ class Shuttlecock:
         closed_thresh = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
 
         # find the contours
-        img, cnts, hierarchy = cv2.findContours(
-            closed_thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-#        cnts, hierarchy = cv2.findContours(
-#            closed_thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        img, cnts, hierarchy = cv2.findContours(closed_thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#        cnts, hierarchy = cv2.findContours(closed_thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
         for cnt in cnts:
             area = cv2.contourArea(cnt)
             if (not self.checkArea(area)):
                 # not the right size for us
                 continue
-            x, y, w, h = cv2.boundingRect(cnt)
-            x = x + w / 2
-            y = y + h / 2
+            x,y,w,h = cv2.boundingRect(cnt)
+            x = x+w/2
+            y = y+h/2
 #            print(area)
 #            area = dim[0] * dim[1]
-            ratio = w / h
-#            print(ratio)
-            print(y)
-
+            ratio = w/h
+            
             if (not self.getPipeAngle(hsv_image, image)):
                 print("pipe not found")
                 continue
@@ -142,10 +170,143 @@ class Shuttlecock:
                         offset = ROBOTAXIS - (y - 130)
                     else:
                         offset = ROBOTAXIS - y
-
-                offset = offset * DISTANCE_SCALE
+                        
+                offset = offset*DISTANCE_SCALE
             return (int(offset), int(angle), self.orient)
         return False
+
+# class Shuttlecock:
+#     # HSV Color Range (Valve)
+#     blue_low = [100, 100, 100]
+#     blue_high = [135, 255, 255]
+
+#     # HSV Pipe Ranges
+#     white_low = [95, 0, 120]
+#     white_high = [110, 50, 240]
+
+#     # Valve Size Range
+#     area_min = 1000
+#     area_max = 10000
+
+#     orient = ORIENT_SIDE
+
+#     # Initialize numpy color arrays
+#     def __init__(self):
+#         self.thresh_low = np.array(self.blue_low, dtype="uint8")
+#         self.thresh_high = np.array(self.blue_high, dtype="uint8")
+#         self.pipe_low = np.array(self.white_low, dtype="uint8")
+#         self.pipe_high = np.array(self.white_high, dtype="uint8")
+
+#     def checkArea(self, area):
+#         return (area <= self.area_max and area >= self.area_min)
+
+#     def calculateAngle(self, ratio):
+#         if (self.orient == ORIENT_SIDE):
+#             if ratio > 2:
+#                 return 0
+#             else:
+#                 return 1
+#         else:
+#             if ratio > 1:
+#                 return 1
+#             else:
+#                 return 0
+
+#     def getPipeAngle(self, hsv_image, image):
+#         pipe_area = 0
+
+#         maskroi = np.zeros((1200, 1600), np.uint8)
+#         myROI = [(900, 200), (900, 1000), (1600, 1000), (1600, 200)]
+#         cv2.fillPoly(maskroi, [np.array(myROI)], 255)
+#         hsv_image = cv2.bitwise_and(hsv_image, hsv_image, mask=maskroi)
+
+#         mask = cv2.inRange(hsv_image, self.pipe_low, self.pipe_high)
+#         output = cv2.bitwise_and(hsv_image, hsv_image, mask=mask)
+#         output_gray = cv2.cvtColor(output, cv2.COLOR_BGR2GRAY)
+#         ret, thresh = cv2.threshold(output_gray, 15, 255, cv2.THRESH_BINARY)
+#         img, contours, hierarchy = cv2.findContours(
+#             thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+# #        contours, hierarchy = cv2.findContours(
+# #            thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+#         for cnt in contours:
+#             area = cv2.contourArea(cnt)
+#             if (area > 2000):
+#                 print(area)
+#                 x, y, w, h = cv2.boundingRect(cnt)
+#                 pipe_area = pipe_area + area
+
+#         print(pipe_area)
+#         if pipe_area > 28000:
+#             self.orient = ORIENT_SIDE
+#             return True
+#         elif pipe_area > 18000:
+#             self.orient = ORIENT_UP
+#             return True
+#         else:
+#             return False
+
+#     # Recieves a path to an image, returns ( offset, orientation, angle )
+#     def processImage(self, path):
+#         # ENSURE PATH IS VALID BEFORE USE!!!
+#         image = cv2.imread(path)
+#         height, width, channels = image.shape
+#         img_center = (width / 2, height / 2)
+#         hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+
+#         maskroi = np.zeros((1200, 1600), np.uint8)
+#         myROI = [(900, 200), (900, 1000), (1600, 1000), (1600, 200)]
+#         cv2.fillPoly(maskroi, [np.array(myROI)], 255)
+#         hsv_image = cv2.bitwise_and(hsv_image, hsv_image, mask=maskroi)
+
+#         # mask it for the desired color as a binary
+#         mask = cv2.inRange(hsv_image, self.thresh_low, self.thresh_high)
+#         output = cv2.bitwise_and(hsv_image, hsv_image, mask=mask)
+#         output_gray = cv2.cvtColor(output, cv2.COLOR_BGR2GRAY)
+#         ret, thresh = cv2.threshold(output_gray, 15, 255, cv2.THRESH_BINARY)
+
+#         # close any holes
+#         kernel = np.ones((5, 5), np.uint8)
+#         closed_thresh = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
+
+#         # find the contours
+#         img, cnts, hierarchy = cv2.findContours(
+#             closed_thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+# #        cnts, hierarchy = cv2.findContours(
+# #            closed_thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+#         for cnt in cnts:
+#             area = cv2.contourArea(cnt)
+#             if (not self.checkArea(area)):
+#                 # not the right size for us
+#                 continue
+#             x, y, w, h = cv2.boundingRect(cnt)
+#             x = x + w / 2
+#             y = y + h / 2
+# #            print(area)
+# #            area = dim[0] * dim[1]
+#             ratio = w / h
+# #            print(ratio)
+#             print(y)
+
+#             if (not self.getPipeAngle(hsv_image, image)):
+#                 print("pipe not found")
+#                 continue
+#             else:
+#                 angle = self.calculateAngle(ratio)
+#                 if self.orient == ORIENT_SIDE:
+#                     if angle == 1:
+#                         offset = ROBOTAXIS - (y - 130)
+#                     else:
+#                         offset = ROBOTAXIS - y
+#                 else:
+#                     if angle == 0:
+#                         offset = ROBOTAXIS - (y - 130)
+#                     else:
+#                         offset = ROBOTAXIS - y
+
+#                 offset = offset * DISTANCE_SCALE
+#             return (int(offset), int(angle), self.orient)
+#         return False
 
 
 class BreakerBox:
